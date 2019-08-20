@@ -10,7 +10,6 @@ import Page4 from './Page4';
 import Footer from './Footer';
 import './static/style';
 
-
 let isMobile = false;
 enquireScreen((b) => {
   isMobile = b;
