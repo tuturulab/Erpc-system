@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './Home';
+import Main from './Dashboard/Main';
+import './Dashboard/styles/index.scss';
 
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router>
-      <Route exact component={Home} />
-      <Route path="/example" component={<p>Holis</p>} />
+      <Route exact path="/" component={Home} />
+      <Route path="/admin" component={Main} />
     </Router>
   </Provider>
 );

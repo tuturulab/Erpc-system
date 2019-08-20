@@ -31,6 +31,10 @@ const postcssNormalize = require('postcss-normalize');
 
 const appPackageJson = require(paths.appPackageJson);
 
+
+/*Ant design */
+const { fixBabelImports } = require('customize-cra');
+
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 // Some apps do not need the benefits of saving a web request, so not inlining the chunk
@@ -328,7 +332,7 @@ module.exports = function(webpackEnv) {
                 formatter: require.resolve('react-dev-utils/eslintFormatter'),
                 eslintPath: require.resolve('eslint'),
                 resolvePluginsRelativeTo: __dirname,
-                
+
               },
               loader: require.resolve('eslint-loader'),
             },
@@ -361,7 +365,7 @@ module.exports = function(webpackEnv) {
                 customize: require.resolve(
                   'babel-preset-react-app/webpack-overrides'
                 ),
-                
+
                 plugins: [
                   [
                     require.resolve('babel-plugin-named-asset-import'),
@@ -374,7 +378,8 @@ module.exports = function(webpackEnv) {
                       },
                     },
                   ],
-                  ["import", { "libraryName": "antd", "style": true }],
+                  ["import", { "libraryName": "antd",  "libraryDirectory": "es", "style": "css" }],
+
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -402,7 +407,7 @@ module.exports = function(webpackEnv) {
                 ],
                 cacheDirectory: true,
                 cacheCompression: isEnvProduction,
-                
+
                 // If an error happens in a package, it's possible to be
                 // because it was compiled. Thus, we don't want the browser
                 // debugger to show the original code. Instead, the code
@@ -429,7 +434,8 @@ module.exports = function(webpackEnv) {
                 {
                   loader: 'less-loader', // compiles Less to CSS
                   options: {
-                    javascriptEnabled: true
+                    javascriptEnabled: true,
+                    modifyVars: { 'primary-color': 'red' },
                   },
                 },
               ],
