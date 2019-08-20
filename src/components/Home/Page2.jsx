@@ -23,7 +23,7 @@ const pageData = [
   {
     title: 'AntV',
     content: '简单、专业、拥有无限可能的数据可视化方案',
-    links: (<a href="https://antv.alipay.com" target="_blank">查看详情&nbsp;&nbsp;<Icon type="right" /></a>),
+    links: (<a href="https://antv.alipay.com" target="_blank" rel="noopener noreferrer">查看详情&nbsp;&nbsp;<Icon type="right" /></a>),
     Bg: Column,
   },
   {
@@ -35,7 +35,7 @@ const pageData = [
   {
     title: 'Egg',
     content: 'Node.js & Koa，为企业级框架和应用而生',
-    links: (<a href="https://eggjs.org" target="_blank">查看详情&nbsp;&nbsp;<Icon type="right" /></a>),
+    links: (<a href="https://eggjs.org" target="_blank" rel="noopener">查看详情&nbsp;&nbsp;<Icon type="right" /></a>),
     full: true,
     Bg: Building,
   },

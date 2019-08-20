@@ -42,7 +42,7 @@ class Home extends React.PureComponent {
         <Page3 key="page3" isMobile={this.state.isMobile} />,
         <Page4 key="page4" />,
         <Footer key="footer" />,
-        <DocumentTitle title="蚂蚁体验云" key="title" />,
+        <DocumentTitle title="ERP - TUTURU LABS" key="title" />,
       ]
     );
   }

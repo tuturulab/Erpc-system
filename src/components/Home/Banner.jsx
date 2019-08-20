@@ -21,7 +21,7 @@ class Banner extends React.PureComponent {
       const children = item.children.map((child, ii) => {
         const tag = child.tag === 'button' ? 'div' : child.tag || 'p';
         const childrenToRender = child.tag === 'button' ?
-          <Button><a href={child.link} target="_blank">{child.children}</a></Button> :
+          <Button><a href={child.link} target="_blank" rel="noopener noreferrer">{child.children}</a></Button> :
           child.children;
         return React.createElement(tag, {
           key: ii.toString(),

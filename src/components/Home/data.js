@@ -1,28 +1,28 @@
 export const header = [
   {
-    title: '产品',
+    title: 'Example',
     children: [
       {
-        title: '云凤蝶', desc: '移动建站平台', img: 'https://gw.alipayobjects.com/zos/rmsportal/fLPzRmwAurHkPDVfHHiQ.svg', link: 'https://fengdie.alipay-eco.com/intro', top: '2px',
+        title: 'Example', desc: '移动建站平台', img: 'https://gw.alipayobjects.com/zos/rmsportal/fLPzRmwAurHkPDVfHHiQ.svg', link: 'https://fengdie.alipay-eco.com/intro', top: '2px',
       },
     ],
   },
   {
-    title: '设计体系',
+    title: 'Example',
     children: [
       {
-        title: '设计价值观', desc: 'Design Values', img: 'https://gw.alipayobjects.com/zos/rmsportal/zMeJnhxAtpXPZAUhUKJH.svg', link: 'https://ant.design/docs/spec/values-cn',
+        title: 'Example', desc: 'Design Values', img: 'https://gw.alipayobjects.com/zos/rmsportal/zMeJnhxAtpXPZAUhUKJH.svg', link: 'https://ant.design/docs/spec/values-cn',
       },
       {
-        title: '视觉', desc: 'Visual', img: 'https://gw.alipayobjects.com/zos/rmsportal/qkNZxQRDqvFJscXVDmKp.svg', link: 'https://ant.design/docs/spec/colors-cn',
+        title: 'Example', desc: 'Visual', img: 'https://gw.alipayobjects.com/zos/rmsportal/qkNZxQRDqvFJscXVDmKp.svg', link: 'https://ant.design/docs/spec/colors-cn',
       },
       {
-        title: '可视化', desc: 'Visualisation', img: 'https://gw.alipayobjects.com/zos/rmsportal/MrUQjZNOJhYJCSZZuJDr.svg', link: 'https://antv.alipay.com/zh-cn/vis/index.html',
+        title: 'Example', desc: 'Visualisation', img: 'https://gw.alipayobjects.com/zos/rmsportal/MrUQjZNOJhYJCSZZuJDr.svg', link: 'https://antv.alipay.com/zh-cn/vis/index.html',
       },
     ],
   },
   {
-    title: '技术方案',
+    title: 'Example',
     children: [
       {
         title: 'Ant Design', desc: '蚂蚁 UI 体系', img: 'https://gw.alipayobjects.com/zos/rmsportal/ruHbkzzMKShUpDYMEmHM.svg', link: 'https://ant.design',
@@ -36,10 +36,10 @@ export const header = [
     ],
   },
   {
-    title: '关于',
+    title: 'Example',
     children: [
       {
-        title: '蚂蚁金服体验科技专栏', desc: '探索极致用户体验与最佳工程实践', img: 'https://gw.alipayobjects.com/zos/rmsportal/VsVqfjYxPTJaFbPcZqMb.svg', link: 'https://zhuanlan.zhihu.com/xtech',
+        title: 'Example', desc: '探索极致用户体验与最佳工程实践', img: 'https://gw.alipayobjects.com/zos/rmsportal/VsVqfjYxPTJaFbPcZqMb.svg', link: 'https://zhuanlan.zhihu.com/xtech',
       },
     ],
   },
