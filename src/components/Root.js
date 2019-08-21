@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './Home';
 import Main from './Dashboard/Main';
-import './Dashboard/styles/index.scss';
 
 const Root = ({ store }) => (
   <Provider store={store}>
