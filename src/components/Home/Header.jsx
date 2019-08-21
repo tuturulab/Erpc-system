@@ -1,17 +1,18 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { Row, Col, Tooltip } from 'antd';
 import { header } from './data';
 
 export default function Header(props) {
   const menuChild = header.map((item, i) => {
     const content = item.children.map((child, ii) => (
-      <a herf={child.link} key={ii.toString()} target="_blank" rel="noopener noreferrer" className="tip-block">
+      <NavLink to={`/home/${child.link}`} key={ii.toString()} className="tip-block">
         <span className="tip-img"><img src={child.img} alt="img" /></span>
         <div className="tip-content">
           {child.title}
           <div>{child.desc}</div>
         </div>
-      </a>
+      </NavLink>
     ));
     return (
       <Col key={i.toString()} span={6}>

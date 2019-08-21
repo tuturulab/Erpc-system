@@ -1,9 +1,9 @@
 export const header = [
   {
-    title: 'Example',
+    title: 'Example1',
     children: [
       {
-        title: 'Example', desc: '移动建站平台', img: 'https://gw.alipayobjects.com/zos/rmsportal/fLPzRmwAurHkPDVfHHiQ.svg', link: 'https://fengdie.alipay-eco.com/intro', top: '2px',
+        title: 'Example2', desc: '移动建站平台', img: 'https://gw.alipayobjects.com/zos/rmsportal/fLPzRmwAurHkPDVfHHiQ.svg', link: "about", top: '2px',
       },
     ],
   },
