@@ -1,0 +1,24 @@
+@import "./variables.less"; // library.less
+
+#components-layout-demo-top-side .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 28px 16px 0;
+  float: left;
+}
+
+#sidebar {
+  position: fixed;
+  height: 100vh;
+  margin-top: @navbar-size !important;
+  overflow-y: auto;
+}
+
+#mainbody {
+  margin-top: @navbar-size;
+  //padding-left: ( @sidebar-size + @padding-content );
+  padding-right: @padding-content;
+}
+
+

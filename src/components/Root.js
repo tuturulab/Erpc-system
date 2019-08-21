@@ -10,6 +10,7 @@ import NotFoundPage from './404';
 //import './Dashboard/styles/index.scss';
 const About = () => <div><h3>About me!</h3></div>;
 const Admin = () => <div><h1>Admin template!</h1></div>;
+import Main from './Dashboard/Main';
 
 const Root = ({ store }) => (
   <Provider store={store}>

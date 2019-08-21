@@ -378,7 +378,7 @@ module.exports = function(webpackEnv) {
                       },
                     },
                   ],
-                  ["import", { "libraryName": "antd",  "libraryDirectory": "es", "style": "css" }],
+                  ["import", { "libraryName": "antd",  "libraryDirectory": "es", "style": true }],
 
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
@@ -434,8 +434,8 @@ module.exports = function(webpackEnv) {
                 {
                   loader: 'less-loader', // compiles Less to CSS
                   options: {
+                    modifyVars: { '@primary-color': '#1DA57A' },
                     javascriptEnabled: true,
-                    modifyVars: { 'primary-color': 'red' },
                   },
                 },
               ],
