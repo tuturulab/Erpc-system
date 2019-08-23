@@ -14,8 +14,8 @@ const Root = ({ store }) => (
     <Router>
       <Switch>
         <Route exact path="/" render={() => <Redirect to="/home" /> } />
-        <Route path="/home" component={Home} />
-        <Route path="/admin" component={Main} />
+        <Route exact path="/home" component={Main} />
+
         <Route component={NotFoundPage}/>
       </Switch>
     </Router>

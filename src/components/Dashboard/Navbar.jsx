@@ -11,27 +11,39 @@ class Navbar extends React.Component {
 
   }
 
+  myFunction() {
+    /*
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+    */
+  }
 
   componentDidMount() {
-
+    //nClick={this.props.openMenu}
   }
 
   render () {
     return (
-      <Menu
-      theme="dark"
-      mode="horizontal"
-      defaultSelectedKeys={['2']}
-      style={{ lineHeight: '64px' }}
-      >
+      <div className="topnav" id="myTopnav">
+        <a onClick={this.props.openMenu} className="active">
+          <Icon type="menu" />
+        </a>
+        <a className="navbaricon" href="#news">
+          <Icon type="bell" />
+        </a>
+        <a className="navbaricon" href="#contact">
+          <Icon type="user" />
+        </a>
 
-        <Menu.Item onClick={this.props.openMenu} key="1">
-          ERP
+        <a className="icon" onClick={this.myFunction()} >
+          <Icon type="menu" />
+        </a>
+      </div>
 
-        </Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
-      </Menu>
     );
   }
 }

@@ -434,7 +434,11 @@ module.exports = function(webpackEnv) {
                 {
                   loader: 'less-loader', // compiles Less to CSS
                   options: {
-                    modifyVars: { '@primary-color': '#1DA57A' },
+                    modifyVars: {
+                      '@primary-color': '#2f4459' ,
+                      '@layout-header-background': '#222F3C ',
+                      '@menu-dark-submenu-bg' : '#1C2732'
+                    },
                     javascriptEnabled: true,
                   },
                 },
