@@ -7,16 +7,17 @@ import Home from './Home';
 import NotFoundPage from './404';
 import Main from './Dashboard/Main';
 
+
 //import './Dashboard/styles/index.scss';
 
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route exact path="/" render={() => <Redirect to="/home" /> } />
+        <Route exact path="/"  />
         <Route exact path="/home" component={Main} />
 
-        <Route component={NotFoundPage}/>
+        <Route component={NotFoundPage} />
       </Switch>
     </Router>
   </Provider>

@@ -7,7 +7,10 @@ import configureStore from './configureStore';
 const store = configureStore();
 
 ReactDOM.render(
-  <Root store={store}></Root>,
+
+    <Root store={store}></Root>
+  ,
+
   document.getElementById('root')
 );
 
