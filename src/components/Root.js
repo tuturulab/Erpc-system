@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import NotFoundPage from './404';
 //import Main from './Dashboard/Main' ;
 
+var loggedIn = true;
 
 const Home = React.lazy(() => import("./Home"));
 const Main = React.lazy(() => import("./Dashboard/Main"));
@@ -14,12 +15,24 @@ const Login = React.lazy(() => import ("./Accounts/Login"));
 
 //import './Dashboard/styles/index.scss';
 
+const HomeComponent = WaitingComponent(Main);
+
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router>
       <Switch>
         <Route exact path="/" component={WaitingComponent(Home)}  />
+
         <Route exact path="/login" component={WaitingComponent(Login) } />
+
+        <Route exact path="/admin" render={() => (
+          loggedIn ? (
+            <HomeComponent></HomeComponent>
+            ) : (
+            <Redirect to="/login"/>
+            )
+        )}/>
+
 
         <Route exact path="/home" component={WaitingComponent(Main)} />
 
