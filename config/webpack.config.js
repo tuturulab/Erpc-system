@@ -437,7 +437,9 @@ module.exports = function(webpackEnv) {
                     modifyVars: {
                       '@primary-color': '#2f4459' ,
                       '@layout-header-background': '#222F3C ',
-                      '@menu-dark-submenu-bg' : '#1C2732'
+                      '@menu-dark-submenu-bg' : '#1C2732',
+                      '@border-color-base' : '#a6a6a6',
+                      '@input-placeholder-color' : '#a6a6a6'
                     },
                     javascriptEnabled: true,
                   },

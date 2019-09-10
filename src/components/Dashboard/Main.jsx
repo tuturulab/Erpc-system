@@ -6,6 +6,16 @@ import Sidebar from './Sidebar';
 import './styles/dashboard.less';
 import { relative } from 'path';
 
+import Inventory from './Products/Inventory';
+import Sells from './Products/Sells';
+import Orders from './Products/Orders';
+import Imports from './Products/Imports';
+
+import MyFooter from './Footer';
+
+import { Route, Link, Switch} from "react-router-dom";
+
+
 import { useTranslation } from 'react-i18next';
 const { SubMenu } = Menu;
 const { Title } = Typography;
@@ -42,44 +52,29 @@ class Main extends React.Component {
   }
 
   render() {
- 
+
 
     return (
 
-
-          <Layout>
-            <Sidebar responsiveMenu = {this.responsiveMenu } open= {this.state.collapsed} > </Sidebar>
-            <Layout id="mainbody" style={{ paddingLeft: this.state.bodyExpanded }} >
-              <Navbar openMenu = {this.openMenu} >
-
-              </Navbar>
-
-              <div id="overlay-nav" >
-                <Title id="maintitle">Productos</Title>
-
-                <Card bordered={false} id="card-content">
-                    <p>
-                    
-                    </p>
-                </Card>
-              </div>
-
-              <Content id="maincontent"
-                style={{
-                  padding: 24,
-                  minHeight: 400
-                }}
-              >
-
-
-              </Content>
-            </Layout>
-          </Layout>
-
-
-
-
-
+      <Layout>
+         
+        <Sidebar responsiveMenu = {this.responsiveMenu } open= {this.state.collapsed} > </Sidebar>
+        <Layout id="mainbody" style={{ paddingLeft: this.state.bodyExpanded }} >
+          <Navbar openMenu = {this.openMenu} >
+          
+          </Navbar> 
+            {/* Routes */}
+            <Switch>
+              <Route exact path={"/admin/inventario"} component={Inventory} />
+              <Route exact path={"/admin/ventas"} component={Sells} />
+              <Route exact path={"/admin/importacion"} component={Imports} />
+              <Route exact path={"/admin/pedidos"} component={Orders} />
+            </Switch>
+            {/*EndRoutes*/}
+            <MyFooter> </MyFooter>
+        </Layout>
+        
+      </Layout>
     )
   }
 }

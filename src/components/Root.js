@@ -21,11 +21,11 @@ const Root = ({ store }) => (
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route exact path="/" component={WaitingComponent(Home)}  />
+        {/*<Route exact path="/" component={WaitingComponent(Home)}  />*/}
 
         <Route exact path="/login" component={WaitingComponent(Login) } />
 
-        <Route exact path="/admin" render={() => (
+        <Route path="/admin" render={() => (
           loggedIn ? (
             <HomeComponent></HomeComponent>
             ) : (

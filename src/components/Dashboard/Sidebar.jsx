@@ -2,8 +2,12 @@ import React,{Component} from 'react';
 
 import { Menu, Icon, Layout } from 'antd';
 
+import { Route, Link} from "react-router-dom";
+
+
 const { SubMenu } = Menu;
 const { Sider } = Layout;
+
 
 
 class Sidebar extends React.Component {
@@ -41,7 +45,7 @@ class Sidebar extends React.Component {
               </span>
             }
           >
-            <Menu.Item key="1">Inventario</Menu.Item>
+            <Menu.Item key="1">   option5<Link to="/admin/inventario"> </Link> </Menu.Item>
             <Menu.Item key="2">Ventas</Menu.Item>
             <Menu.Item key="3">Importación</Menu.Item>
             <Menu.Item key="4">Ped</Menu.Item>
@@ -55,7 +59,7 @@ class Sidebar extends React.Component {
               </span>
             }
           >
-            <Menu.Item key="5">option5</Menu.Item>
+            <Menu.Item key="5"><div> <Link to="/admin/inventario"> option5 </Link> </div></Menu.Item>
             <Menu.Item key="6">option6</Menu.Item>
             <Menu.Item key="7">option7</Menu.Item>
             <Menu.Item key="8">option8</Menu.Item>
