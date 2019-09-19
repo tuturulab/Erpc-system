@@ -32,7 +32,7 @@ class Login extends React.Component {
 
 
   onSubmit = (e) => {
-    
+
     e.preventDefault();
 
     this.setState({
@@ -40,26 +40,27 @@ class Login extends React.Component {
     });
 
     var settings = {
-      "email" : this.state.user,
-      "password" : this.state.password,
-      
+      //"email" : this.state.user,
+      //"password" : this.state.password,
+
       headers : {
           "Content-Type": "application/json",
           "Accept" : "application/json",
-          "Origin": ""
         }
 
     }
 
-    axios.post("localhost:3000/auth/login",settings)
+    axios.get("http://localhost:5000/api/auth/token",settings)
     .then ( response => {
       if (response.status === 200) {
+
+        console.log(response);
 
         this.setState({
           loadingBtn : false
         })
 
-        localStorage.setItem('jwt', response.data.access_token);
+        localStorage.setItem('jwt', response.data);
 
         //this.LoadingBar.complete();
 
@@ -96,14 +97,14 @@ class Login extends React.Component {
       <div id="bodylogin" className="align">
 
         <div className="grid">
-          
+
           <ReactSVG src="logo.svg" />
 
           <form method="POST"  className="form login">
 
             <div className="form__field">
               <label htmlFor="login__username">
-             
+
                 <span className="hidden">Username</span></label>
               <input style={{zIndex: '999'}} id="login__username" value={this.state.user} onChange={this.updateInputValue} type="text" name="username" className="form__input" placeholder="Username" required />
             </div>
@@ -119,13 +120,13 @@ class Login extends React.Component {
               <Button loading={this.state.loadingBtn} onClick={this.onSubmit} size={"large"} style={{width: '100%', position: 'relative', zIndex : '999'}} type="primary" >
                 Loading
               </Button>
-              
+
             </div>
-      
+
 
           </form>
 
-         
+
 
         </div>
 

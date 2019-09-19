@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Icon } from 'antd';
+import { Menu, Icon, Modal } from 'antd';
 
 
 
@@ -8,19 +8,29 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.props = props;
-
-  }
-
-  myFunction() {
-    /*
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
+    this.state = {
+      modalVisible : false
     }
-    */
   }
+
+  handleOk = () => {
+    this.setState({
+      modalVisible : false
+    })
+  }
+
+  handleCancel = () => {
+    this.setState({
+      modalVisible : false
+    })
+  }
+
+  openModal = () => {
+    this.setState({
+      modalVisible : true
+    });
+  }
+
 
   componentDidMount() {
     //nClick={this.props.openMenu}
@@ -28,22 +38,35 @@ class Navbar extends React.Component {
 
   render () {
     return (
-      <div className="topnav" id="myTopnav">
-        <a onClick={this.props.openMenu} className="active">
-          <Icon type="menu" />
-        </a>
-        <a className="navbaricon" href="#news">
-          <Icon type="bell" />
-        </a>
-        <a className="navbaricon" href="#contact">
-          <Icon type="user" />
-        </a>
+      <div>
+        <Modal
+            title="Language"
+            visible={this.state.modalVisible}
+            onOk={this.handleOk}
+            onCancel={this.handleCancel}
+          >
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+        </Modal>
 
-        <a className="icon" onClick={this.myFunction()} >
-          <Icon type="menu" />
-        </a>
+
+        <div className="topnav" id="myTopnav">
+          <a onClick={this.props.openMenu} className="active">
+            <Icon type="menu" />
+          </a>
+          <a className="navbaricon" href="#news">
+            <Icon type="bell" />
+          </a>
+          <a className="navbaricon" href="#contact">
+            <Icon type="user" />
+          </a>
+
+          <a className="icon" onClick={this.openModal} >
+            <Icon type="menu" />
+          </a>
+        </div>
       </div>
-
     );
   }
 }

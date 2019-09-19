@@ -27,7 +27,9 @@
   min-height: 100%;
 }
 
-
+body {
+  overflow-y: auto;
+}
 
 
 /* Navbar Style */
@@ -121,6 +123,7 @@
   right: 0;
   top:  -64px;
   width: 100%;
+  padding-bottom: 15px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   height: auto;
@@ -139,7 +142,7 @@
 }
 
 
-//Footer 
+//Footer
 
 .footer {
   background: @color-banner;
@@ -156,7 +159,7 @@
 
   @media screen and (max-width: 1024px) {
     text-align: center;
-  }  
+  }
 }
 
 #footer-right {
@@ -164,6 +167,6 @@
 
   @media screen and (max-width: 1024px) {
     text-align: center;
-  }  
+  }
 }
 

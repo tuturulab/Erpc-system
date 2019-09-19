@@ -10,8 +10,11 @@ import Inventory from './Products/Inventory';
 import Sells from './Products/Sells';
 import Orders from './Products/Orders';
 import Imports from './Products/Imports';
+import Employees from './rrhh/Employees';
 
 import MyFooter from './Footer';
+
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 import { Route, Link, Switch} from "react-router-dom";
 
@@ -57,23 +60,31 @@ class Main extends React.Component {
     return (
 
       <Layout>
-         
+
         <Sidebar responsiveMenu = {this.responsiveMenu } open= {this.state.collapsed} > </Sidebar>
         <Layout id="mainbody" style={{ paddingLeft: this.state.bodyExpanded }} >
           <Navbar openMenu = {this.openMenu} >
-          
-          </Navbar> 
+
+          </Navbar>
             {/* Routes */}
             <Switch>
               <Route exact path={"/admin/inventario"} component={Inventory} />
               <Route exact path={"/admin/ventas"} component={Sells} />
               <Route exact path={"/admin/importacion"} component={Imports} />
               <Route exact path={"/admin/pedidos"} component={Orders} />
+              <Route exact path={"/admin/empleados"} component={Employees} />
+
             </Switch>
             {/*EndRoutes*/}
-            <MyFooter> </MyFooter>
+
         </Layout>
-        
+
+        <MessengerCustomerChat
+          pageId="111138870281650"
+          appId="1678638095724206"
+        />,
+
+
       </Layout>
     )
   }

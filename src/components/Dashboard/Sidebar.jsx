@@ -4,6 +4,7 @@ import { Menu, Icon, Layout } from 'antd';
 
 import { Route, Link} from "react-router-dom";
 
+import { withTranslation } from 'react-i18next';
 
 const { SubMenu } = Menu;
 const { Sider } = Layout;
@@ -27,6 +28,8 @@ class Sidebar extends React.Component {
   }
 
   render() {
+    const { t } = this.props;
+
     return(
       <Sider width={230} collapsed={this.props.open} collapsible trigger={null} collapsedWidth="0" id="sidebar"  breakpoint="lg"  onBreakpoint={this.onBreakpointMenu}  >
         <Menu
@@ -41,14 +44,14 @@ class Sidebar extends React.Component {
             title={
               <span>
                 <Icon type="user" />
-                Productos
+                {t('products.title')}
               </span>
             }
           >
-            <Menu.Item key="1">   option5<Link to="/admin/inventario"> </Link> </Menu.Item>
-            <Menu.Item key="2">Ventas</Menu.Item>
-            <Menu.Item key="3">Importación</Menu.Item>
-            <Menu.Item key="4">Ped</Menu.Item>
+            <Menu.Item key="1">   {t('products.inventory.title')} <Link to="/admin/inventario"> </Link> </Menu.Item>
+            <Menu.Item key="2"> {t('products.sales.title')} </Menu.Item>
+            <Menu.Item key="3"> {t('products.imports.title')} </Menu.Item>
+            <Menu.Item key="4"> {t('products.orders.title')} </Menu.Item>
           </SubMenu>
           <SubMenu
             key="sub2"
@@ -84,4 +87,4 @@ class Sidebar extends React.Component {
   }
 }
 
-export default Sidebar;
+export default withTranslation() (Sidebar) ;

@@ -1,0 +1,32 @@
+{
+  "products": {
+    "title" : "Products",
+    "inventory" : {
+      "title" : "Inventory"
+    },
+    "sales" : {
+      "title" : "Sales"
+    },
+    "imports" : {
+      "title" : "Imports"
+    },
+    "orders" : {
+      "title" : "Orders"
+    }
+  },
+
+  "rrhh" : {
+    "title" : "Human Capital",
+    "employees" : {
+      "title" : "Employees"
+    }
+  },
+
+  "functions" : {
+    "buttons" : {
+      "add" : "add"
+    }
+  }
+
+
+}
