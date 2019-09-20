@@ -963,6 +963,13 @@
   dependencies:
     "@hapi/hoek" "8.x.x"
 
+"@jbuschke/formik-antd@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@jbuschke/formik-antd/-/formik-antd-1.4.2.tgz#72e5acc88ea6ae4af1ca5f20ae6b67a807087606"
+  integrity sha512-y0hDZsxuENGo4ZZyEX7Jya5nkhVuXhzkoMezHpOponcF3fflID03Gc5HPBilZyGeULYfl7f0kt8C67rRM6JKlA==
+  dependencies:
+    lodash.get "4.4.2"
+
 "@jest/console@^24.7.1":
   version "24.7.1"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-24.7.1.tgz#32a9e42535a97aedfe037e725bd67e954b459545"
@@ -6526,6 +6533,11 @@ lodash.flow@^3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/lodash.flow/-/lodash.flow-3.5.0.tgz#87bf40292b8cf83e4e8ce1a3ae4209e20071675a"
   integrity sha1-h79AKSuM+D5OjOGjrkIJ4gBxZ1o=
+
+lodash.get@4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
 
 lodash.isarguments@^3.0.0:
   version "3.1.0"

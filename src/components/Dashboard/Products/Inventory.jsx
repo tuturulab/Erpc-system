@@ -14,6 +14,7 @@ import Divider from '.././Divider';
 import CardProduct from './CardProduct';
 import {AxiosApiGet} from '../../../helpers/AxiosApi';
 
+import ModalAddProduct from './ModalAddProduct';
 import { withTranslation } from 'react-i18next';
 
 const { Title } = Typography;
@@ -45,6 +46,10 @@ const Inventory = ({ t, i18n } ) => {
     GetApi();
 
   }, [] );
+
+  function openModalAdd ()  {
+    alert("hola");
+  }
 
 
   return (
@@ -80,7 +85,7 @@ const Inventory = ({ t, i18n } ) => {
             <Col xs={24} sm={24} md={12} lg={12} xl={12}>
               <div className="section-btn" >
 
-                <Button size={"large"} type="primary" icon="plus"> {t('functions.buttons.add')} </Button>
+                <ModalAddProduct text={t('functions.buttons.add')} > </ModalAddProduct>
               </div>
 
 

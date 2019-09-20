@@ -9,16 +9,9 @@ const store = configureStore();
 
 ReactDOM.render(
 
-    <div>
 
-      <Root store={store}></Root>
-
-
-
-    </div>
-
+  <Root store={store}></Root>
   ,
-
   document.getElementById('root')
 
 );

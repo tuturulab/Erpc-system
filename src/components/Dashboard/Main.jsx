@@ -82,7 +82,7 @@ class Main extends React.Component {
         <MessengerCustomerChat
           pageId="111138870281650"
           appId="1678638095724206"
-        />,
+        />
 
 
       </Layout>
