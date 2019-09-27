@@ -17,15 +17,49 @@
   },
 
   "rrhh" : {
-    "title" : "Recursos humanos",
+    "title" : "Recursos Humanos",
     "employees" : {
       "title" : "Empleados"
+    },
+    "contract" : {
+      "title" : "Contratación"
+    },
+    "qual" : {
+      "title" : "Calification"
+    },
+    "vacation" : {
+      "title" :  "Vacaciones"
     }
   },
 
+  "admin" : {
+    "title" : "Administración" ,
+    "calendar" : {
+      "title" : "Calendario"
+    },
+    "scrum" : {
+      "title" : "Scrum Manager"
+    },
+    "obj" : {
+      "title" : "Objectivos"
+    },
+    "fin" : {
+      "title" : "Financieros"
+    }
+
+  },
+
+  "reports" : {
+    "title" : "Reportes",
+    "sales" : {
+      "title": "Ventas"
+    }
+  },
+
+
   "functions" : {
     "buttons" : {
-      "add" : "agregar"
+      "add" : "Agregar"
     }
   }
 

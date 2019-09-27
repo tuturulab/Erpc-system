@@ -20,6 +20,7 @@ import { Route, Link, Switch} from "react-router-dom";
 
 
 import { useTranslation } from 'react-i18next';
+import Calendar from './Admin/Calendar';
 const { SubMenu } = Menu;
 const { Title } = Typography;
 const { Header, Content, Sider } = Layout;
@@ -73,6 +74,9 @@ class Main extends React.Component {
               <Route exact path={"/admin/importacion"} component={Imports} />
               <Route exact path={"/admin/pedidos"} component={Orders} />
               <Route exact path={"/admin/empleados"} component={Employees} />
+
+
+              <Route exact path={"/admin/calendario"} component={Calendar} />
 
             </Switch>
             {/*EndRoutes*/}

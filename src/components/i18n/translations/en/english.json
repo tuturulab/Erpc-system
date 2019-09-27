@@ -19,8 +19,42 @@
     "title" : "Human Capital",
     "employees" : {
       "title" : "Employees"
+    },
+    "contract" : {
+      "title" : "Contractation"
+    },
+    "qual" : {
+      "title" : "Qualification"
+    },
+    "vacation" : {
+      "title" :  "Vacations"
     }
   },
+
+  "admin" : {
+    "title" : "Administration" ,
+    "calendar" : {
+      "title" : "Calendar"
+    },
+    "scrum" : {
+      "title" : "Scrum Manager"
+    },
+    "obj" : {
+      "title" : "Objectives"
+    },
+    "fin" : {
+      "title" : "Finnacial"
+    }
+
+  },
+
+  "reports" : {
+    "title" : "Reports",
+    "sales" : {
+      "title": "Sales"
+    }
+  },
+
 
   "functions" : {
     "buttons" : {

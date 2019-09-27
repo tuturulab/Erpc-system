@@ -36,14 +36,14 @@ class Sidebar extends React.Component {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
+          defaultOpenKeys={['sub1', 'sub2', 'sub3']}
           style={{ height: '100%', borderRight: 0 }}
         >
           <SubMenu
             key="sub1"
             title={
               <span>
-                <Icon type="user" />
+                <Icon type="container" />
                 {t('products.title')}
               </span>
             }
@@ -57,29 +57,31 @@ class Sidebar extends React.Component {
             key="sub2"
             title={
               <span>
-                <Icon type="laptop" />
-                subnav 2
+                <Icon type="user" />
+                {t('rrhh.title')}
               </span>
             }
           >
-            <Menu.Item key="5"><div> <Link to="/admin/inventario"> option5 </Link> </div></Menu.Item>
-            <Menu.Item key="6">option6</Menu.Item>
-            <Menu.Item key="7">option7</Menu.Item>
-            <Menu.Item key="8">option8</Menu.Item>
+            <Menu.Item key="5"> {t('rrhh.employees.title')} <Link to="/admin/empleados">  </Link> </Menu.Item>
+            <Menu.Item key="6"> {t('rrhh.contract.title')}  <Link to="/admin/contratacion"> </Link>  </Menu.Item>
+            <Menu.Item key="7"> {t('rrhh.qual.title')} <Link to="/admin/calificacion">  </Link> </Menu.Item>
+            <Menu.Item key="8"> {t('rrhh.vacation.title')} <Link to="/admin/vacaciones">  </Link> </Menu.Item>
           </SubMenu>
           <SubMenu
             key="sub3"
             title={
               <span>
-                <Icon type="notification" />
-                subnav 3
+                <Icon type="pie-chart" />
+                {t('admin.title')}
               </span>
             }
           >
-            <Menu.Item key="9">option9</Menu.Item>
-            <Menu.Item key="10">option10</Menu.Item>
-            <Menu.Item key="11">option11</Menu.Item>
-            <Menu.Item key="12">option12</Menu.Item>
+            <Menu.Item key="9"> {t('admin.calendar.title')} <Link to="/admin/calendario">  </Link> </Menu.Item>
+            <Menu.Item key="10"> {t('admin.scrum.title')} <Link to="/admin/scrum">  </Link> </Menu.Item>
+            <Menu.Item key="11"> {t('admin.obj.title')} <Link to="/admin/objetivos">  </Link> </Menu.Item>
+            <Menu.Item key="12"> {t('admin.fin.title')} <Link to="/admin/financiero">  </Link> </Menu.Item>
+
+
           </SubMenu>
         </Menu>
       </Sider>
