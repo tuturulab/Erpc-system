@@ -24,6 +24,6 @@ export function AxiosApiGet(url) {
 }
 
 
-export function AxiosAPiPost (url, params) {
-
+export function AxiosApiPost (url, params) {
+  return AxiosApi.post(url , params, settings);
 }

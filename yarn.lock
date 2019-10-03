@@ -3057,6 +3057,14 @@ create-react-context@^0.2.2:
     fbjs "^0.8.0"
     gud "^1.0.0"
 
+create-react-context@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.3.0.tgz#546dede9dc422def0d3fc2fe03afe0bc0f4f7d8c"
+  integrity sha512-dNldIoSuNSvlTJ7slIKC/ZFGKexBMBrrcc+TTe1NdmROnaASuLPvqpwj9v4XS4uXZ8+YPu0sNmShX2rXI5LNsw==
+  dependencies:
+    gud "^1.0.0"
+    warning "^4.0.3"
+
 cross-spawn@6.0.5, cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
@@ -3368,6 +3376,11 @@ data-urls@^1.0.0, data-urls@^1.1.0:
     abab "^2.0.0"
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
+
+date-fns@^2.0.1:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.4.0.tgz#e02d1d08ce80ae1db3de40a0028c9f54203d034b"
+  integrity sha512-xS547fK1omgCgOGbyU0fBY2pdeXQ9/WO/PMsVgX1jtF56dXNHrV3Z+GKWIOE7IG+UEeu+fTyTlnIvBKbxXxdSw==
 
 date-now@^0.1.4:
   version "0.1.4"
@@ -7861,6 +7874,11 @@ pnp-webpack-plugin@1.5.0:
   dependencies:
     ts-pnp "^1.1.2"
 
+popper.js@^1.14.4:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.15.0.tgz#5560b99bbad7647e9faa475c6b8056621f5a4ff2"
+  integrity sha512-w010cY1oCUmI+9KwwlWki+r5jxKfTFDVoadl7MSrIujHU5MJ5OR6HTDj6Xo8aoR/QsA56x8jKjA59qGH4ELtrA==
+
 portfinder@^1.0.9:
   version "1.0.21"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.21.tgz#60e1397b95ac170749db70034ece306b9a27e324"
@@ -9263,6 +9281,17 @@ react-app-polyfill@^1.0.2:
     regenerator-runtime "0.13.3"
     whatwg-fetch "3.0.0"
 
+react-datepicker@^2.9.6:
+  version "2.9.6"
+  resolved "https://registry.yarnpkg.com/react-datepicker/-/react-datepicker-2.9.6.tgz#26190c9f71692149d0d163398aa19e08626444b1"
+  integrity sha512-PLiVhyAr567gWuLMZwIH9WpTIZOZVLhEFyuUzSx3kmQdiikjrYpdNlxsfbbgaxRnee5y08KJZequaqRsNySXmw==
+  dependencies:
+    classnames "^2.2.6"
+    date-fns "^2.0.1"
+    prop-types "^15.7.2"
+    react-onclickoutside "^6.9.0"
+    react-popper "^1.3.4"
+
 react-dev-utils@^9.0.3:
   version "9.0.3"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-9.0.3.tgz#7607455587abb84599451460eb37cef0b684131a"
@@ -9369,6 +9398,23 @@ react-messenger-customer-chat@^0.7.2:
   dependencies:
     prop-types "^15.6.0"
 
+react-onclickoutside@^6.9.0:
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.9.0.tgz#a54bc317ae8cf6131a5d78acea55a11067f37a1f"
+  integrity sha512-8ltIY3bC7oGhj2nPAvWOGi+xGFybPNhJM0V1H8hY/whNcXgmDeaeoCMPPd8VatrpTsUWjb/vGzrmu6SrXVty3A==
+
+react-popper@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-1.3.4.tgz#f0cd3b0d30378e1f663b0d79bcc8614221652ced"
+  integrity sha512-9AcQB29V+WrBKk6X7p0eojd1f25/oJajVdMZkywIoAV6Ag7hzE1Mhyeup2Q1QnvFRtGQFQvtqfhlEoDAPfKAVA==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    create-react-context "^0.3.0"
+    popper.js "^1.14.4"
+    prop-types "^15.6.1"
+    typed-styles "^0.0.7"
+    warning "^4.0.2"
+
 react-redux@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.1.0.tgz#72af7cf490a74acdc516ea9c1dd80e25af9ea0b2"
@@ -9443,6 +9489,30 @@ react-svg@^10.0.20:
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@tanem/svg-injector" "^8.0.30"
+    prop-types "^15.7.2"
+
+react-tooltip@^3.11.1:
+  version "3.11.1"
+  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-3.11.1.tgz#7b4ce48ed26a46e996662b19a2afebbfd483513b"
+  integrity sha512-YCMVlEC2KuHIzOQhPplTK5jmBBwoL+PYJJdJKXj7M/h7oevupd/QSVq6z5U7/ehIGXyHsAqvwpdxexDfyQ0o3A==
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.0"
+
+react-vertical-timeline-component@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/react-vertical-timeline-component/-/react-vertical-timeline-component-2.5.0.tgz#0b8e54b21c0ce9ffc2fa2ce3831ad7f4001d68a3"
+  integrity sha512-922SH2Rxiuis1KwpHGSiMbegzIbkICEQpfHAQ2LuDW+oqQRhEaC27Mh73f+Fez7iEFqGYvMUEPzwjqfmRpQw6Q==
+  dependencies:
+    classnames "^2.2.6"
+    prop-types "^15.7.2"
+    react-visibility-sensor "^5.1.1"
+
+react-visibility-sensor@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/react-visibility-sensor/-/react-visibility-sensor-5.1.1.tgz#5238380960d3a0b2be0b7faddff38541e337f5a9"
+  integrity sha512-cTUHqIK+zDYpeK19rzW6zF9YfT4486TIgizZW53wEZ+/GPBbK7cNS0EHyJVyHYacwFEvvHLEKfgJndbemWhB/w==
+  dependencies:
     prop-types "^15.7.2"
 
 react@^16.9.0:
@@ -10965,6 +11035,11 @@ type@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/type/-/type-1.0.3.tgz#16f5d39f27a2d28d86e48f8981859e9d3296c179"
   integrity sha512-51IMtNfVcee8+9GJvj0spSuFcZHe9vSib6Xtgsny1Km9ugyz2mbS08I3rsUIRYgJohFRFU1160sgRodYz378Hg==
+
+typed-styles@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/typed-styles/-/typed-styles-0.0.7.tgz#93392a008794c4595119ff62dde6809dbc40a3d9"
+  integrity sha512-pzP0PWoZUhsECYjABgCGQlRGL1n7tOHsgwYv3oIiEpJwGhFTuty/YNeduxQYzXXa3Ge5BdT6sHYIQYpl4uJ+5Q==
 
 typedarray@^0.0.6:
   version "0.0.6"

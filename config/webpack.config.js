@@ -442,8 +442,13 @@ module.exports = function(webpackEnv) {
                       '@input-number-handler-hover-bg' : '#a6a6a6',
                       '@input-placeholder-color' : '#a6a6a6',
                       '@input-hover-border-color ' : '#a6a6a6',
+
                       '@border-radius-base' : '5px',
-                      '@border-radius-sm' : '5px'
+                      '@border-radius-sm' : '5px',
+
+                      '@input-border-color' : '#ced4da',
+
+
                     },
                     javascriptEnabled: true,
                   },

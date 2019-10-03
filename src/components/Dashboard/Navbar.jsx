@@ -52,18 +52,18 @@ class Navbar extends React.Component {
 
 
         <div className="topnav" id="myTopnav">
-          <a onClick={this.props.openMenu} className="active">
+          <a style={{paddingLeft: this.props.marginLeft,   transition: 'all 0.2s' }} onClick={this.props.openMenu} className="active">
             <Icon type="menu" />
           </a>
           <a className="navbaricon" href="#news">
             <Icon type="bell" />
           </a>
-          <a className="navbaricon" href="#contact">
-            <Icon type="user" />
+          <a className="navbaricon" onClick={this.openModal} href="#contact">
+            <Icon type="setting" />
           </a>
 
           <a className="icon" onClick={this.openModal} >
-            <Icon type="menu" />
+            <Icon type="setting" />
           </a>
         </div>
       </div>

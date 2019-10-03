@@ -12,22 +12,21 @@ import Moment from 'moment';
 import Loading from '.././Loading';
 import Divider from '.././Divider';
 
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 
-import './Calendar.scss';
+import './ScrumManager.scss';
 
 import {AxiosApiGet} from '../../../helpers/AxiosApi';
 
 import { withTranslation } from 'react-i18next';
-import ModalAddCalendar from './AddCalendar';
-import ReactTooltip from 'react-tooltip';
+
 
 const { Title } = Typography;
 const { Content } = Layout;
 
 
-const Calendar = ({ t, i18n } ) => {
+const ScrumManager = ({ t, i18n } ) => {
 
 
   const initialDate = Moment().format("M") + "-" + Moment().format("Y");
@@ -56,7 +55,7 @@ const Calendar = ({ t, i18n } ) => {
   //When a date is rendered in the Full Calendar
   function handleDate () {
 
-    if (calendarRef.current !== null  ) {
+    if (calendarRef.current !== null ) {
       let calendarApi = calendarRef.current.getApi() ;
 
       var originalDate = Moment(calendarApi.getDate()) ;
@@ -64,13 +63,11 @@ const Calendar = ({ t, i18n } ) => {
       let date = originalDate.format("M") + "-" + originalDate.format("Y");
 
       //console.log( date );
-      if (date !== selectedDate)  {
-        setSelectedDate (date);
 
-        GetApi();
-      }
-
+      setSelectedDate (date);
     }
+
+    GetApi();
 
     //setLoading ( true);
   }
@@ -78,12 +75,12 @@ const Calendar = ({ t, i18n } ) => {
 
   //Call Api
   async function GetApi()  {
-    setLoading(true);
+    //setLoading(true);
 
-    AxiosApiGet('api/calendar?date='+selectedDate ).then ( response => {
+    AxiosApiGet('api/scrum/date?='+selectedDate ).then ( response => {
       if (response.status === 200) {
         setDates (response.data);
-        console.log(response);
+        //console.log(response);
         setLoading(false);
       } else {
         setLoading(false);
@@ -91,19 +88,10 @@ const Calendar = ({ t, i18n } ) => {
     })
   }
 
-  function handleEventPositioned(event) {
-    //console.log("im here");
-    //console.log(event);
-
-    //console.log(event);
-    event.el.setAttribute("data-tip",event.event._def.extendedProps.description);
-    ReactTooltip.rebuild();
-  }
-
   return (
 
     <Row>
-      <ReactTooltip />
+
       <Col xs={24} sm={24} md={24} lg={24} xl={24}>
         <div id="overlay-nav" >
           <Title id="maintitle">   {t('admin.calendar.title')} </Title>
@@ -123,7 +111,7 @@ const Calendar = ({ t, i18n } ) => {
                 <Icon type="user" />
                 <span>Administración</span>
               </Breadcrumb.Item>
-              <Breadcrumb.Item>Calendario</Breadcrumb.Item>
+              <Breadcrumb.Item>Scrum Manager</Breadcrumb.Item>
             </Breadcrumb>
 
 
@@ -131,7 +119,7 @@ const Calendar = ({ t, i18n } ) => {
 
           <Col xs={24} sm={24} md={12} lg={12} xl={12}>
             <div className="section-btn" >
-              <ModalAddCalendar complete={GetApi} text={"Agregar un Evento"} ></ModalAddCalendar>
+
 
             </div>
           </Col>
@@ -162,14 +150,34 @@ const Calendar = ({ t, i18n } ) => {
                   :
 
                   <div>
-                    <FullCalendar
-                      ref={calendarRef}
-                      events={ dates }
-                      //eventRender={handleEventPositioned}
-                      eventPositioned={handleEventPositioned}
-                      defaultView="dayGridMonth"
-                      datesRender={ handleDate }
-                      plugins={[ dayGridPlugin ]} />
+                    <VerticalTimeline>
+                    <VerticalTimelineElement
+                      className="vertical-timeline-element--work"
+                      contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                      contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                      date="2011 - present"
+                      iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+
+                    >
+                      <h3 className="vertical-timeline-element-title">Creative Director</h3>
+                      <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+                      <p>
+                        Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+                      </p>
+                    </VerticalTimelineElement>
+                    <VerticalTimelineElement
+                      className="vertical-timeline-element--work"
+                      date="2010 - 2011"
+                      iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+
+                    >
+                      <h3 className="vertical-timeline-element-title">Art Director</h3>
+                      <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+                      <p>
+                        Creative Direction, User Experience, Visual Design, SEO, Online Marketing
+                      </p>
+                    </VerticalTimelineElement>
+                    </VerticalTimeline>
                   </div>
                 }
 
@@ -196,5 +204,5 @@ const Calendar = ({ t, i18n } ) => {
   )
 }
 
-export default withTranslation() ( Calendar ) ;
+export default withTranslation() ( ScrumManager ) ;
 

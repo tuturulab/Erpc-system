@@ -32,7 +32,7 @@ const Inventory = ({ t, i18n } ) => {
   useEffect(() => {
 
     async function GetApi()  {
-      AxiosApiGet('api/product').then ( response => {
+      AxiosApiGet('api/product/all').then ( response => {
         if (response.status === 200) {
           setProductsList (response.data);
           console.log(response);

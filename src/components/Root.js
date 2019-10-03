@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
+
 //import Home from './Home';
 import NotFoundPage from './404';
 //import Main from './Dashboard/Main' ;
@@ -45,7 +46,7 @@ const options = {
   htmlTag: document.documentElement
 }
 
-//var userLang = navigator.language || navigator.userLanguage; 
+//var userLang = navigator.language || navigator.userLanguage;
 //alert ("The language is: " + userLang);
 
 
@@ -68,12 +69,12 @@ i18n
     interpolation: {
       escapeValue: false // react already safes from xss
     }
-    
+
 
   });
 
 
-//Detect language 
+//Detect language
 let search = window.location.search;
 let params = new URLSearchParams(search);
 let foo = params.get('lng');
@@ -88,21 +89,20 @@ function isUserLoggedIn() {
   /* If a token exists */
   if (jwt) {
     /*Compare if the token has expired */
-    var expireDate =  Date.parse(localStorage.getItem('date') );
-    var now = new Date();
-    if ( now >= expireDate  ) {
-      localStorage.removeItem('jwt');
-      return false;
-    } else {
+    //var expireDate =  Date.parse(localStorage.getItem('date') );
+    //var now = new Date();
+    //if ( now >= expireDate  ) {
+    //  localStorage.removeItem('jwt');
+    //  return false;
+    //} else {
       return true;
-    }
+    //}
   }else {
     return false;
   }
 
 }
 
-var loggedIn = isUserLoggedIn();
 
 const Root = ({ store }) => (
   <I18nextProvider i18n={i18n}>
@@ -114,7 +114,7 @@ const Root = ({ store }) => (
           <Route exact path="/login" component={WaitingComponent(Login) } />
 
           <Route path="/admin" render={() => (
-            loggedIn ? (
+            isUserLoggedIn() ? (
               <HomeComponent></HomeComponent>
               ) : (
               <Redirect to="/login"/>

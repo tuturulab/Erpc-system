@@ -21,6 +21,7 @@ import { Route, Link, Switch} from "react-router-dom";
 
 import { useTranslation } from 'react-i18next';
 import Calendar from './Admin/Calendar';
+import ScrumManager from './Admin/ScrumManager';
 const { SubMenu } = Menu;
 const { Title } = Typography;
 const { Header, Content, Sider } = Layout;
@@ -32,27 +33,52 @@ class Main extends React.Component {
     super(props);
 
     this.props = props;
-    this.state = { collapsed: false, bodyExpanded : '230px' };
+    this.state = { collapsed: false, bodyExpanded : '230px', mobile : false, navbarExpanded : '16px' };
   }
 
   openMenu = () => {
 
     if (this.state.collapsed ) {
-      this.setState ( { collapsed : false, bodyExpanded: '230px' });
+
+      if (this.state.mobile === true )
+        this.setState ({collapsed : false, bodyExpanded : '0px', navbarExpanded : '246px' } )
+      else
+        this.setState ({collapsed : false, bodyExpanded : '230px', navbarExpanded : '16px'} )
     }else {
-      this.setState ( { collapsed : true, bodyExpanded: '0px' });
+      this.setState ( { collapsed : true, bodyExpanded: '0px', navbarExpanded : '16px' });
     }
 
     this.setState({ collapsed: !this.state.collapsed });
     //this.state.collapsed ? 'menu-unfold' : 'menu-fold'
   }
 
-  responsiveMenu = (param) => {
-    if (param) {
-      this.setState({ collapsed: true , bodyExpanded : '0px' });
+
+
+  onBreakpointMenu=(broken) => {
+
+    if (broken == true) {
+      this.setState({ mobile : true }, () => {
+        if (this.state.collapsed ) {
+          this.setState({collapsed : false}, () => { this.openMenu();} )
+
+        }
+      })
     } else {
-      this.setState ({collapsed : false, bodyExpanded : '230px'} )
+      this.setState({ mobile : false }, () => {
+
+        if (this.state.collapsed ) {
+          this.setState({collapsed : false}, () => { this.openMenu();} )
+
+        }
+      });
     }
+
+    if (!this.state.collapsed ) {
+      this.setState({collapsed : true}, () => { this.openMenu();} )
+
+    }
+
+
   }
 
   render() {
@@ -62,9 +88,9 @@ class Main extends React.Component {
 
       <Layout>
 
-        <Sidebar responsiveMenu = {this.responsiveMenu } open= {this.state.collapsed} > </Sidebar>
+        <Sidebar onBreakpointMenu={this.onBreakpointMenu} open= {this.state.collapsed} > </Sidebar>
         <Layout id="mainbody" style={{ paddingLeft: this.state.bodyExpanded }} >
-          <Navbar openMenu = {this.openMenu} >
+          <Navbar marginLeft={this.state.navbarExpanded } openMenu = {this.openMenu} >
 
           </Navbar>
             {/* Routes */}
@@ -77,6 +103,8 @@ class Main extends React.Component {
 
 
               <Route exact path={"/admin/calendario"} component={Calendar} />
+
+              <Route exact path={"/admin/scrum"} component={ScrumManager} />
 
             </Switch>
             {/*EndRoutes*/}

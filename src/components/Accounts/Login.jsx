@@ -22,6 +22,7 @@ class Login extends React.Component {
     this.setState({
       user : evt.target.value
     });
+
   }
 
   updatePassword = (evt) => {
@@ -39,18 +40,20 @@ class Login extends React.Component {
       loadingBtn : true
     });
 
+    var params = {
+      "Email" : this.state.user,
+      "HashedPassword" : this.state.password,
+    }
+
     var settings = {
-      //"email" : this.state.user,
-      //"password" : this.state.password,
 
       headers : {
           "Content-Type": "application/json",
           "Accept" : "application/json",
-        }
-
+      }
     }
 
-    axios.get("http://localhost:5000/api/auth/token",settings)
+    axios.post("https://127.0.0.1:5001/api/users/authenticate", params , settings)
     .then ( response => {
       if (response.status === 200) {
 
@@ -60,7 +63,7 @@ class Login extends React.Component {
           loadingBtn : false
         })
 
-        localStorage.setItem('jwt', response.data);
+        localStorage.setItem('jwt', response.data.token);
 
         //this.LoadingBar.complete();
 

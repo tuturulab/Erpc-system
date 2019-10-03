@@ -1,2 +1,30 @@
 @import '~@fullcalendar/core/main.css';
 @import '~@fullcalendar/daygrid/main.css';
+
+
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+  display: block !important;
+  width: 100% !important;
+
+  height: 40px !important;
+  color: rgba(0, 0, 0, 0.65) !important;
+
+  line-height: 1.5 \9 !important;
+  background-color: #fff !important;
+  background-image: none !important;
+  border: 1px solid #a6a6a6 !important;
+  border-radius: 5px !important;
+  transition: all 0.3s !important;
+
+}
+
+.react-datepicker__input-container input {
+  padding-left: 10px;
+}
+
+.react-datepicker-wrapper {
+  display: block;
+  width: 100%;
+
+}

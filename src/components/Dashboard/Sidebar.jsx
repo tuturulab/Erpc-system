@@ -10,17 +10,11 @@ const { SubMenu } = Menu;
 const { Sider } = Layout;
 
 
-
 class Sidebar extends React.Component {
 
   constructor(props) {
     super(props);
     this.props = props;
-  }
-
-  onBreakpointMenu=(broken) => {
-    //console.log(this);
-    this.props.responsiveMenu(broken);
   }
 
   onCollapseMenu = (collapsed, type) => {
@@ -31,7 +25,7 @@ class Sidebar extends React.Component {
     const { t } = this.props;
 
     return(
-      <Sider width={230} collapsed={this.props.open} collapsible trigger={null} collapsedWidth="0" id="sidebar"  breakpoint="lg"  onBreakpoint={this.onBreakpointMenu}  >
+      <Sider style={{zIndex : '9999'}} width={230} collapsed={this.props.open} collapsible trigger={null} collapsedWidth="0" id="sidebar"  breakpoint="lg"  onBreakpoint={this.props.onBreakpointMenu}  >
         <Menu
           theme="dark"
           mode="inline"
@@ -83,6 +77,7 @@ class Sidebar extends React.Component {
 
 
           </SubMenu>
+
         </Menu>
       </Sider>
     )
