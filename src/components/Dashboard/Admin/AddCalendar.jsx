@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import {Button, Modal, Row, Col,Icon, DatePicker, Spin } from 'antd';
 
 
+import cogoToast from 'cogo-toast';
+
 import moment from 'moment';
 
 import { Form, Input, InputNumber,  Checkbox } from "@jbuschke/formik-antd";
@@ -53,13 +55,18 @@ const ModalAddCalendar = ( {text} ) => {
 
         console.log(response);
 
+        setLoading(false);
         setVisible(false);
+
+        cogoToast.success('Se ha registrado correctamente el evento y se ha notificado a los empleados por medio de Whats App.');
 
       } else {
         setLoading(false);
+        cogoToast.error('Hubo un error al ingresar, intente nuevamente');
       }
     }).catch(function(error) {
       setLoading(false);
+      cogoToast.error('Hubo un error al ingresar, intente nuevamente');
     });
   }
 

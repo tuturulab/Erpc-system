@@ -53,34 +53,39 @@ const Calendar = ({ t, i18n } ) => {
 
   }, [] );
 
-  //When a date is rendered in the Full Calendar
-  function handleDate () {
+//When a date is rendered in the Full Calendar
 
-    if (calendarRef.current !== null  ) {
-      let calendarApi = calendarRef.current.getApi() ;
+  /*function handleDate () {
 
-      var originalDate = Moment(calendarApi.getDate()) ;
+  if (calendarRef.current !== null  ) {
+    let calendarApi = calendarRef.current.getApi() ;
 
-      let date = originalDate.format("M") + "-" + originalDate.format("Y");
+    var originalDate = Moment(calendarApi.getDate()) ;
 
-      //console.log( date );
-      if (date !== selectedDate)  {
-        setSelectedDate (date);
+    console.log(originalDate);
 
-        GetApi();
-      }
+    let date = originalDate.format("M") + "-" + originalDate.format("Y");
 
+    //console.log( date );
+    if (date !== selectedDate)  {
+      setSelectedDate (date);
+
+      GetApi();
     }
 
-    //setLoading ( true);
+
   }
+
+  //setLoading ( true);
+  }
+  */
 
 
   //Call Api
   async function GetApi()  {
     setLoading(true);
 
-    AxiosApiGet('api/calendar?date='+selectedDate ).then ( response => {
+    AxiosApiGet('api/calendar').then ( response => {
       if (response.status === 200) {
         setDates (response.data);
         console.log(response);
@@ -168,7 +173,6 @@ const Calendar = ({ t, i18n } ) => {
                       //eventRender={handleEventPositioned}
                       eventPositioned={handleEventPositioned}
                       defaultView="dayGridMonth"
-                      datesRender={ handleDate }
                       plugins={[ dayGridPlugin ]} />
                   </div>
                 }
