@@ -5,7 +5,7 @@ import Axios, { create } from 'axios';
 
 
 var AxiosApi = create({
-    baseURL: 'http://127.0.0.1:5000'
+    baseURL: 'http://localhost:5000'
 });
 
 var token = localStorage.getItem('jwt');

@@ -22,6 +22,7 @@ import { Route, Link, Switch} from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import Calendar from './Admin/Calendar';
 import ScrumManager from './Admin/ScrumManager';
+import Stats from './Stats/Stats';
 const { SubMenu } = Menu;
 const { Title } = Typography;
 const { Header, Content, Sider } = Layout;
@@ -66,8 +67,8 @@ class Main extends React.Component {
     } else {
       this.setState({ mobile : false }, () => {
 
-        if (this.state.collapsed ) {
-          this.setState({collapsed : false}, () => { this.openMenu();} )
+        if (!this.state.collapsed ) {
+          this.setState({collapsed : true}, () => { this.openMenu();} )
 
         }
       });
@@ -95,6 +96,9 @@ class Main extends React.Component {
           </Navbar>
             {/* Routes */}
             <Switch>
+              <Route exact path={"/admin/"} component={Stats} />
+
+
               <Route exact path={"/admin/inventario"} component={Inventory} />
               <Route exact path={"/admin/ventas"} component={Sells} />
               <Route exact path={"/admin/importacion"} component={Imports} />

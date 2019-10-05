@@ -7,7 +7,7 @@ import ImageUploader from '../../../helpers/ImageUploader';
 
 const { Option } = Select;
 
-const ModalAddProduct = ( {text} ) => {
+const ModalAddEmployee = ( {text} ) => {
 
   const [ visible , setVisible] = useState(false);
 
@@ -29,7 +29,7 @@ const ModalAddProduct = ( {text} ) => {
 
       <Modal
         visible={visible}
-        title="Agregar un Producto"
+        title="Agregar un Empleado"
         onOk={handleOk}
         onCancel={handleCancel}
         width={"90%"}
@@ -50,35 +50,29 @@ const ModalAddProduct = ( {text} ) => {
               <Row>
                 <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                   <Form.Item style={{ padding: '15px'}} label="Nombre" name="Nombre" >
-                    <Input size={"large"} name="name" placeholder="name" />
+                    <Input size={"large"} name="Name" placeholder="Ingresa el nombre" />
                   </Form.Item>
                 </Col>
 
                 <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-                  <Form.Item style={{ padding: '15px'}} label="Precio" name="price" >
-                    <Input size={"large"} name="price" placeholder="price" />
+                  <Form.Item style={{ padding: '15px'}} label="Identificación" name="identification" >
+                    <Input size={"large"} name="Document Number" placeholder="Ingresa la identificación" />
                   </Form.Item>
                 </Col>
 
                 <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-                  <Form.Item style={{ padding: '15px'}} label="Stock" name="Stock" >
-                    <Input size={"large"} name="stock" placeholder="stock" />
+                  <Form.Item style={{ padding: '15px'}} label="Email" name="Email" >
+                    <Input size={"large"} name="Email" placeholder="Ingresa el email" />
                   </Form.Item>
                 </Col>
 
                 <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-                  <Form.Item style={{ padding: '15px'}} label="Stock Mínimo" name="Stock" >
-                  <Input size={"large"} name="stock" placeholder="Stock Mínimo" />
+                  <Form.Item style={{ padding: '15px'}} label="Teléfono" name="Cellphone" >
+                    <Input size={"large"} name="phone" placeholder="Ingresa el Teléfono" />
                   </Form.Item>
                 </Col>
 
                 <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-                  <Form.Item style={{ padding: '15px'}} label="Ecommerce" name="Stock" >
-                    <Checkbox style={{fontSize: '1rem', paddingTop: '10px'}}>Permitir Ecommerce</Checkbox>
-                  </Form.Item>
-                </Col>
-
-                <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                   <Form.Item style={{ padding: '15px'}} label="Fotografía" name="picture" >
                     <ImageUploader></ImageUploader>
                   </Form.Item>
@@ -97,4 +91,4 @@ const ModalAddProduct = ( {text} ) => {
   )
 }
 
-export default ModalAddProduct;
+export default ModalAddEmployee;

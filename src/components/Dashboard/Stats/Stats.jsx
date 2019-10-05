@@ -3,7 +3,6 @@ import { Layout,Button, Input,
 Breadcrumb, Icon, Typography,Spin,
 Row, Col,Card } from 'antd';
 
-import EmployeesCard from './employeesCard';
 
 
 import ReactSVG from 'react-svg';
@@ -15,25 +14,25 @@ import Divider from '.././Divider';
 import {AxiosApiGet} from '../../../helpers/AxiosApi';
 
 import { withTranslation } from 'react-i18next';
-import ModalAddEmployee from './AddEmployee';
 
 const { Title } = Typography;
 const { Content } = Layout;
 
 
-const Employees = ({ t, i18n } ) => {
+const Stats = ({ t, i18n } ) => {
 
   //Variables
   //var array = [ "hola", "adios"]
-  const[ employeesList, setEemployeesList ] = useState( [] );
-  const[ loading , setLoading] = useState(true);
+  //const[ productsList, setProductsList ] = useState( [] );
+  //const[ loading , setLoading] = useState(true);
+
 
   return (
 
     <Row>
       <Col xs={24} sm={24} md={24} lg={24} xl={24}>
         <div id="overlay-nav" >
-          <Title id="maintitle">   {t('rrhh.employees.title')} </Title>
+          <Title id="maintitle">  Estadísticas </Title>
 
         </div>
 
@@ -47,9 +46,9 @@ const Employees = ({ t, i18n } ) => {
               </Breadcrumb.Item>
               <Breadcrumb.Item href="">
                 <Icon type="user" />
-                <span> {t('rrhh.title')} </span>
+                <span>Inicio</span>
               </Breadcrumb.Item>
-              <Breadcrumb.Item> {t('rrhh.employees.title')} </Breadcrumb.Item>
+              <Breadcrumb.Item>Estadísticas</Breadcrumb.Item>
             </Breadcrumb>
             </Col>
 
@@ -61,35 +60,19 @@ const Employees = ({ t, i18n } ) => {
             <Col xs={24} sm={24} md={12} lg={12} xl={12}>
               <div className="section-btn" >
 
-                <ModalAddEmployee text="Agregar empleado"></ModalAddEmployee>
               </div>
 
 
             </Col>
 
-            <Col xs={24} sm={24} md={24} lg={242} xl={24}>
+            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+            <Divider> </Divider>
+              <div >
 
-
+              </div>
             </Col>
 
           </Card>
-
-
-          <Col style={{textAlign: 'center', paddingLeft: '10px', paddingRight: '10px' }} xs={24} sm={24} md={8} lg={8} xl={8}>
-           <EmployeesCard ></EmployeesCard>
-
-          </Col>
-
-          <Col style={{textAlign: 'center', paddingLeft: '10px', paddingRight: '10px' }} xs={24} sm={24} md={8} lg={8} xl={8}>
-            <EmployeesCard ></EmployeesCard>
-
-          </Col>
-
-          <Col style={{textAlign: 'center', paddingLeft: '10px', paddingRight: '10px' }} xs={24} sm={24} md={8} lg={8} xl={8}>
-            <EmployeesCard ></EmployeesCard>
-
-          </Col>
-
         </div>
       </Col>
 
@@ -101,6 +84,7 @@ const Employees = ({ t, i18n } ) => {
         }}
       >
 
+
       </Content>
 
 
@@ -108,4 +92,5 @@ const Employees = ({ t, i18n } ) => {
   )
 }
 
-export default withTranslation() ( Employees ) ;
+export default withTranslation() ( Stats ) ;
+
