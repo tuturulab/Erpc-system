@@ -1,6 +1,6 @@
 {
   "products": {
-    "title" : "Productos",
+    "title" : "Herramientas",
 
     "inventory" : {
       "title" : "Inventario"
@@ -13,6 +13,9 @@
     },
     "orders" : {
       "title" : "Pedidos"
+    },
+    "clients" : {
+      "title" : "Clientes"
     }
   },
 

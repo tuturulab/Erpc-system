@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import NotFoundPage from './404';
 //import Main from './Dashboard/Main' ;
 
+import ScreenLoader from './Dashboard/Loader.js';
+
 //Multi Language
 import i18n from 'i18next';
 import detector from "i18next-browser-languagedetector";
@@ -122,9 +124,6 @@ const Root = ({ store }) => (
           )}/>
 
 
-          <Route exact path="/home" component={WaitingComponent(Main)} />
-
-
           <Route component={NotFoundPage} />
         </Switch>
       </Router>
@@ -134,7 +133,7 @@ const Root = ({ store }) => (
 
 function WaitingComponent(Component) {
   return props => (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={ScreenLoader}>
       <Component {...props} />
     </Suspense>
   );
