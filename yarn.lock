@@ -6396,6 +6396,11 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
   integrity sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
 
+kjua-svg@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/kjua-svg/-/kjua-svg-1.9.1.tgz#acfa933132073bf6c7f7e38d710cd5bd07475c63"
+  integrity sha512-zDtybVk6fbJUz50ghpYp5tzd+Y6MsMQpEOzX5tIfSH4pvRM7bf15TW/4v2dFnCp+R9mwCVp2qIZZyRhdXn3tPw==
+
 kleur@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
@@ -7114,6 +7119,14 @@ next-tick@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
+
+ngx-kjua@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/ngx-kjua/-/ngx-kjua-1.6.0.tgz#2b7fa3c0eef1328b0aa133877968c222e206b0a3"
+  integrity sha512-ul0aq6PBndySVL4XvIf4gytW7Tqh5IwxQtx5q03WN9swfZrFcX4foZcKq9Gzlh05nFhvOyjA4YTLHMsfw2P2Yw==
+  dependencies:
+    kjua-svg "^1.9.1"
+    tslib "^1.9.0"
 
 nice-try@^1.0.4:
   version "1.0.5"

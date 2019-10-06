@@ -52,6 +52,7 @@
     "less": "^3.10.1",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "0.5.0",
+    "ngx-kjua": "^1.6.0",
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "pnp-webpack-plugin": "1.5.0",
