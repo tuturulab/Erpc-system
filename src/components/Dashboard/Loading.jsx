@@ -7,8 +7,8 @@ import DotLoader from 'react-spinners/DotLoader';
 const antIcon = <Icon type="loading" style={{ fontSize: 100 }} spin />;
 
 const override = css`
-    
-    
+
+
     border-color: yellow;
     position: absolute;
     left: 0;
@@ -20,18 +20,18 @@ const override = css`
 
 const Loading = () => {
   return(
-    
-    <div style={{height: '400px', position: 'relative'}} className='sweet-loading'>
+
+    <div style={{height: '400px', position: 'relative', overflowY: 'hidden' }} className='sweet-loading'>
         <DotLoader
           css={override}
           sizeUnit={"px"}
           size={80}
           color={'#28BEBD'}
-        
-        />
-    </div> 
 
-    
+        />
+    </div>
+
+
   )
 }
 

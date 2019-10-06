@@ -24,6 +24,8 @@ import { useTranslation } from 'react-i18next';
 import Calendar from './Admin/Calendar';
 import ScrumManager from './Admin/ScrumManager';
 import Stats from './Stats/Stats';
+import Sales from './Products/Sales';
+import Clients from './Products/Clients';
 const { SubMenu } = Menu;
 const { Title } = Typography;
 const { Header, Content, Sider } = Layout;
@@ -97,12 +99,14 @@ class Main extends React.Component {
           </Navbar>
             {/* Routes */}
             <Switch>
-              <Route exact path={"/admin/"} component={Stats} />
+              <Route exact path={"/admin"} component={Stats} />
 
+              <Route exact path={"/admin/clientes"} component={Clients} />
 
               <Route exact path={"/admin/inventario"} component={Inventory} />
               <Route exact path={"/admin/pdfviewer"} component={PdfViewer} />
               <Route exact path={"/admin/ventas"} component={Sells} />
+              <Route exact path={"/admin/ventas"} component={Sales} />
               <Route exact path={"/admin/importacion"} component={Imports} />
               <Route exact path={"/admin/pedidos"} component={Orders} />
               <Route exact path={"/admin/empleados"} component={Employees} />

@@ -53,7 +53,7 @@ class Login extends React.Component {
       }
     }
 
-    axios.post("http://localhost:5001/api/users/authenticate", params , settings)
+    axios.post("https://127.0.0.1:5001/api/users/authenticate", params , settings)
     .then ( response => {
       if (response.status === 200) {
 
@@ -67,7 +67,7 @@ class Login extends React.Component {
 
         //this.LoadingBar.complete();
 
-        this.props.history.push('/home');
+        this.props.history.push('/admin');
 
         /* Seteamos el response json */
       } else {

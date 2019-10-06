@@ -438,15 +438,10 @@ module.exports = function(webpackEnv) {
                       '@primary-color': '#2f4459' ,
                       '@layout-header-background': '#222F3C ',
                       '@menu-dark-submenu-bg' : '#1C2732',
-                      '@border-color-base' : '#a6a6a6',
-                      '@input-number-handler-hover-bg' : '#a6a6a6',
-                      '@input-placeholder-color' : '#a6a6a6',
-                      '@input-hover-border-color ' : '#a6a6a6',
 
                       '@border-radius-base' : '5px',
                       '@border-radius-sm' : '5px',
 
-                      '@input-border-color' : '#ced4da',
 
 
                     },

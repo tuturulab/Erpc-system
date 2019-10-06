@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Layout,Button, Input,
 Breadcrumb, Icon, Typography,Spin,
-Row, Col,Card } from 'antd';
+Row, Col,Card, Table } from 'antd';
 
-import EmployeesCard from './employeesCard';
 
 
 import ReactSVG from 'react-svg';
@@ -12,26 +11,49 @@ import NotFound from '../../Dashboard/NotFound';
 import Loading from '.././Loading';
 import Divider from '.././Divider';
 
+import CardProduct from './CardProduct';
 import {AxiosApiGet} from '../../../helpers/AxiosApi';
 
+import ModalAddSales from './ModalAddSales';
 import { withTranslation } from 'react-i18next';
-import ModalAddEmployee from './AddEmployee';
 
 const { Title } = Typography;
 const { Content } = Layout;
 
 
-const Employees = ({ t, i18n } ) => {
+const columns = [
+  {
+    title: 'Name',
+    dataIndex: 'name',
+    key: 'name',
+    render: text => <a>{text}</a>,
+  },
+  {
+    title: 'Age',
+    dataIndex: 'age',
+    key: 'age',
+  },
+  {
+    title: 'Address',
+    dataIndex: 'address',
+    key: 'address',
+  }
+];
 
-  const[ employeesList, setEemployeesList ] = useState( [] );
+
+const Clients = ({ t, i18n } ) => {
+
+  //Variables
+  //var array = [ "hola", "adios"]
+  const[ clientsList, setClientsList ] = useState( [] );
   const[ loading , setLoading] = useState(true);
 
+
   async function GetApi()  {
-    AxiosApiGet('api/employee')
-    .then ( response => {
+    AxiosApiGet('api/clients').then ( response => {
       if (response.status === 200) {
-        setEemployeesList (response.data);
-        console.log(response.data);
+        setClientsList (response.data);
+        console.log(response);
         setLoading(false);
       } else {
         setLoading(false);
@@ -44,8 +66,7 @@ const Employees = ({ t, i18n } ) => {
 
     GetApi();
 
-  },[] );
-
+  }, [] );
 
 
   return (
@@ -53,13 +74,11 @@ const Employees = ({ t, i18n } ) => {
     <Row>
       <Col xs={24} sm={24} md={24} lg={24} xl={24}>
         <div id="overlay-nav" >
-          <Title id="maintitle">   {t('rrhh.employees.title')} </Title>
+          <Title id="maintitle">   {t('products.sales.title')} </Title>
 
         </div>
 
         <div className="wrapper">
-          <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-
           <Card bordered={false} id="card-content">
 
             <Col>
@@ -69,9 +88,9 @@ const Employees = ({ t, i18n } ) => {
               </Breadcrumb.Item>
               <Breadcrumb.Item href="">
                 <Icon type="user" />
-                <span> {t('rrhh.title')} </span>
+                <span>Productos</span>
               </Breadcrumb.Item>
-              <Breadcrumb.Item> {t('rrhh.employees.title')} </Breadcrumb.Item>
+              <Breadcrumb.Item>Ventas</Breadcrumb.Item>
             </Breadcrumb>
             </Col>
 
@@ -83,48 +102,36 @@ const Employees = ({ t, i18n } ) => {
             <Col xs={24} sm={24} md={12} lg={12} xl={12}>
               <div className="section-btn" >
 
-                <ModalAddEmployee complete={GetApi} text="Agregar empleado"></ModalAddEmployee>
+                <ModalAddSales text="Agregar una venta"> </ModalAddSales>
               </div>
 
 
             </Col>
 
-            <Col xs={24} sm={24} md={24} lg={242} xl={24}>
+            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+            <Divider> </Divider>
+              <div >
+                {loading ?
+                  <Loading> </Loading>
+                  :
+
+                  <div>
+                    { (clientsList.length > 0) ?
+                      <div>
+                        <Table columns={columns} dataSource={clientsList} />
+                      </div>
 
 
+                      :
+                      <NotFound> </NotFound>
+                    }
+                  </div>
+                }
+
+              </div>
             </Col>
 
           </Card>
-          </Col>
-
-          <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-
-            <div >
-              {loading ?
-                <Loading> </Loading>
-                :
-
-                <div>
-                  { (employeesList.length > 0) ?
-                    <div>
-                      {employeesList.map(employee =>
-                        <Col style={{textAlign: 'center', paddingLeft: '10px', paddingRight: '10px' }} xs={24} sm={24} md={8} lg={8} xl={8}>
-                          <EmployeesCard employee={employee} ></EmployeesCard>
-                        </Col>
-                      )}
-                    </div>
-
-
-                    :
-                    <NotFound> </NotFound>
-                  }
-                </div>
-              }
-
-            </div>
-
-          </Col>
-
         </div>
       </Col>
 
@@ -136,6 +143,7 @@ const Employees = ({ t, i18n } ) => {
         }}
       >
 
+
       </Content>
 
 
@@ -143,4 +151,5 @@ const Employees = ({ t, i18n } ) => {
   )
 }
 
-export default withTranslation() ( Employees ) ;
+export default withTranslation() ( Clients ) ;
+

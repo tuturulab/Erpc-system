@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Layout,Button, Input,
 Breadcrumb, Icon, Typography,Spin,
-Row, Col,Card } from 'antd';
+Row, Col,Card, Table } from 'antd';
 
 
 
@@ -14,27 +14,47 @@ import Divider from '.././Divider';
 import CardProduct from './CardProduct';
 import {AxiosApiGet} from '../../../helpers/AxiosApi';
 
-import ModalAddProduct from './ModalAddProduct';
+import ModalAddSales from './ModalAddSales';
 import { withTranslation } from 'react-i18next';
 
 const { Title } = Typography;
 const { Content } = Layout;
 
 
-const Inventory = ({ t, i18n } ) => {
+const columns = [
+  {
+    title: 'Name',
+    dataIndex: 'name',
+    key: 'name',
+    render: text => <a>{text}</a>,
+  },
+  {
+    title: 'Age',
+    dataIndex: 'age',
+    key: 'age',
+  },
+  {
+    title: 'Address',
+    dataIndex: 'address',
+    key: 'address',
+  }
+];
+
+
+const Sales = ({ t, i18n } ) => {
 
   //Variables
   //var array = [ "hola", "adios"]
-  const[ productsList, setProductsList ] = useState( [] );
+  const[ salesList, setSalesList ] = useState( [] );
   const[ loading , setLoading] = useState(true);
 
 
   useEffect(() => {
 
     async function GetApi()  {
-      AxiosApiGet('api/product/all').then ( response => {
+      AxiosApiGet('api/sales').then ( response => {
         if (response.status === 200) {
-          setProductsList (response.data);
+          setSalesList (response.data);
           console.log(response);
           setLoading(false);
         } else {
@@ -48,13 +68,12 @@ const Inventory = ({ t, i18n } ) => {
   }, [] );
 
 
-
   return (
 
     <Row>
       <Col xs={24} sm={24} md={24} lg={24} xl={24}>
         <div id="overlay-nav" >
-          <Title id="maintitle">   {t('products.inventory.title')} </Title>
+          <Title id="maintitle">   {t('products.sales.title')} </Title>
 
         </div>
 
@@ -70,7 +89,7 @@ const Inventory = ({ t, i18n } ) => {
                 <Icon type="user" />
                 <span>Productos</span>
               </Breadcrumb.Item>
-              <Breadcrumb.Item>Inventario</Breadcrumb.Item>
+              <Breadcrumb.Item>Ventas</Breadcrumb.Item>
             </Breadcrumb>
             </Col>
 
@@ -82,7 +101,7 @@ const Inventory = ({ t, i18n } ) => {
             <Col xs={24} sm={24} md={12} lg={12} xl={12}>
               <div className="section-btn" >
 
-                <ModalAddProduct text={t('functions.buttons.add')} > </ModalAddProduct>
+                <ModalAddSales text="Agregar una venta"> </ModalAddSales>
               </div>
 
 
@@ -96,16 +115,9 @@ const Inventory = ({ t, i18n } ) => {
                   :
 
                   <div>
-                    { (productsList.length > 0) ?
+                    { (salesList.length > 0) ?
                       <div>
-
-
-                          {productsList.map(product =>
-                            <Col style={{paddingLeft : '15px' , paddingRight : '15px'}} xs={24} sm={24} md={16} lg={8} xl={8} >
-                              <CardProduct Product={product} ></CardProduct>
-                            </Col>
-                          )}
-
+                        <Table columns={columns} dataSource={salesList} />
                       </div>
 
 
@@ -138,5 +150,5 @@ const Inventory = ({ t, i18n } ) => {
   )
 }
 
-export default withTranslation() ( Inventory ) ;
+export default withTranslation() ( Sales ) ;
 

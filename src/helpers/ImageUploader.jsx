@@ -35,6 +35,8 @@ class Avatar extends React.Component {
         this.setState({
           imageUrl,
           loading: false,
+        }, () => {
+          this.props.setPicture (info.file.originFileObj);
         }),
       );
     }
