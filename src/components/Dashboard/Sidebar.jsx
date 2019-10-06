@@ -46,6 +46,7 @@ class Sidebar extends React.Component {
             <Menu.Item key="2"> {t('products.sales.title')} </Menu.Item>
             <Menu.Item key="3"> {t('products.imports.title')} </Menu.Item>
             <Menu.Item key="4"> {t('products.orders.title')} </Menu.Item>
+            <Menu.Item key="5">Pdfviewer<Link to="/admin/pdfviewer"> </Link> </Menu.Item>
           </SubMenu>
           <SubMenu
             key="sub2"
