@@ -9,7 +9,7 @@ const employeesCard = ( {employee} ) => {
     <div>
       <Card id="card-employe" >
         <div id="profile-info">
-          <img id="profile-image" src={"https://127.0.0.1:5001/images/" + employee.picture}></img>
+          <img id="profile-image" src={"http://localhost:5001/images/" + employee.picture}></img>
         </div>
 
         <p id="name-card-employee"> {employee.name} </p>
