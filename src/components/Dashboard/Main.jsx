@@ -8,7 +8,7 @@ import { relative } from 'path';
 
 import Inventory from './Products/Inventory';
 import PdfViewer from './Products/PdfViewer';
-import Sells from './Products/Sells';
+//import Sells from './Products/Sells';
 import Orders from './Products/Orders';
 import Imports from './Products/Imports';
 import Employees from './rrhh/Employees';
@@ -105,7 +105,6 @@ class Main extends React.Component {
 
               <Route exact path={"/admin/inventario"} component={Inventory} />
               <Route exact path={"/admin/pdfviewer"} component={PdfViewer} />
-              <Route exact path={"/admin/ventas"} component={Sells} />
               <Route exact path={"/admin/ventas"} component={Sales} />
               <Route exact path={"/admin/importacion"} component={Imports} />
               <Route exact path={"/admin/pedidos"} component={Orders} />
