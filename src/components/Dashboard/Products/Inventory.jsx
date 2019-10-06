@@ -28,20 +28,20 @@ const Inventory = ({ t, i18n } ) => {
   const[ productsList, setProductsList ] = useState( [] );
   const[ loading , setLoading] = useState(true);
 
+  async function GetApi()  {
+    AxiosApiGet('api/product').then ( response => {
+      if (response.status === 200) {
+        setProductsList (response.data);
+        console.log(response);
+        setLoading(false);
+      } else {
+        setLoading(false);
+      }
+    })
+  }
+
 
   useEffect(() => {
-
-    async function GetApi()  {
-      AxiosApiGet('api/product/all').then ( response => {
-        if (response.status === 200) {
-          setProductsList (response.data);
-          console.log(response);
-          setLoading(false);
-        } else {
-          setLoading(false);
-        }
-      })
-    }
 
     GetApi();
 
@@ -82,7 +82,7 @@ const Inventory = ({ t, i18n } ) => {
             <Col xs={24} sm={24} md={12} lg={12} xl={12}>
               <div className="section-btn" >
 
-                <ModalAddProduct text={t('functions.buttons.add')} > </ModalAddProduct>
+                <ModalAddProduct complete={GetApi} text={t('functions.buttons.add')} > </ModalAddProduct>
               </div>
 
 

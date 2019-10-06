@@ -13,7 +13,7 @@ import {AxiosApiPost} from '../../../helpers/AxiosApi';
 
 const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
 
-const ModalAddCalendar = ( {text} ) => {
+const ModalAddCalendar = ( {text, complete} ) => {
 
   //States
   const [ visible , setVisible] = useState(false);
@@ -57,7 +57,7 @@ const ModalAddCalendar = ( {text} ) => {
 
         setLoading(false);
         setVisible(false);
-
+        complete();
         cogoToast.success('Se ha registrado correctamente el evento y se ha notificado a los empleados por medio de Whats App.');
 
       } else {
