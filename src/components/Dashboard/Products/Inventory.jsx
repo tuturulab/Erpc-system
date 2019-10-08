@@ -15,7 +15,7 @@ import { QRCode } from 'react-qrcode-logo';
 import Loading from '.././Loading';
 import Divider from '.././Divider';
 
-import CardProduct from './CardProduct';
+import ProductCard from './ProductCard';
 import { AxiosApiGet } from '../../../helpers/AxiosApi';
 
 import ModalAddProduct from './ModalAddProduct';
@@ -106,7 +106,7 @@ const Inventory = ({ t, i18n }) => {
 
                       {productsList.map(product =>
                         <Col style={{ paddingLeft: '15px', paddingRight: '15px' }} xs={24} sm={24} md={16} lg={8} xl={8} >
-                          <CardProduct Product={product} ></CardProduct>
+                          <ProductCard Product={product} ></ProductCard>
 
                         </Col>
                       )}

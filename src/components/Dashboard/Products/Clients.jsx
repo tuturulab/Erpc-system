@@ -11,7 +11,7 @@ import NotFound from '../../Dashboard/NotFound';
 import Loading from '.././Loading';
 import Divider from '.././Divider';
 
-import CardProduct from './CardProduct';
+import CardProduct from './ProductCard';
 import {AxiosApiGet} from '../../../helpers/AxiosApi';
 
 import ModalAddSales from './ModalAddSales';

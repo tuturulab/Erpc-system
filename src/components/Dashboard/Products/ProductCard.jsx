@@ -4,11 +4,13 @@ import { withTranslation } from 'react-i18next';
 
 import { Icon } from 'antd';
 import { QRCode } from 'react-qrcode-logo';
-import { Barcode  } from 'react-barcode';
 
 
 
 import './styles/CardProduct.less';
+
+//var Barcode = require('react-barcode');
+import Barcode from 'react-barcode';
 
 const ProductCard = ({ Product }) => {
   return (
@@ -37,6 +39,7 @@ const ProductCard = ({ Product }) => {
             </div>
           </div>
         </div>
+     
         <div className="inside">
           <div className="icon"><Icon type="info" style={{ fontSize: '25px', color: '#fff' }} /></div>
           <div className="contents">
