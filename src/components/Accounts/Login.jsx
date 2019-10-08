@@ -133,8 +133,7 @@ class Login extends React.Component {
 
         </div>
 
-        <div className="wave"></div>
-        <div className="wave"></div>
+        
       </div>
     )
   }
