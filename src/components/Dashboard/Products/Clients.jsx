@@ -30,14 +30,19 @@ const columns = [
     render: text => <a>{text}</a>,
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
+    title: 'Email',
+    dataIndex: 'email',
+    key: 'email',
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
+    title: 'Identificación',
+    dataIndex: 'document',
+    key: 'document',
+  },
+  {
+    title: 'Teléfono',
+    dataIndex: 'cellphone',
+    key: 'cellphone',
   }
 ];
 
@@ -104,7 +109,7 @@ const Clients = ({ t, i18n } ) => {
             <Col xs={24} sm={24} md={12} lg={12} xl={12}>
               <div className="section-btn" >
 
-                <ModalAddClient text="Agregar un cliente"> </ModalAddClient>
+                <ModalAddClient complete={GetApi} text="Agregar un cliente"> </ModalAddClient>
               </div>
 
 
@@ -120,7 +125,7 @@ const Clients = ({ t, i18n } ) => {
                   <div>
                     { (clientsList.length > 0) ?
                       <div>
-                        <Table columns={columns} dataSource={clientsList} />
+                        <Table bordered columns={columns} dataSource={clientsList} />
                       </div>
 
 
