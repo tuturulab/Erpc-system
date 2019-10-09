@@ -23,7 +23,7 @@ const ModalAddProduct = ( {text, complete } ) => {
   const [ minStockField, setMinStockField ] = useState( "" );
   const [ stockField, setStockField ] = useState( "" );
   const [ pictureField , setPictureField ] = useState ( "" );
-  const [ ecommerce, setEcommerce ] = useState ( false );
+  const [ ecommerce, setEcommerce ] = useState ( true );
 
 
 
