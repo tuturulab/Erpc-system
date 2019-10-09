@@ -1,37 +1,43 @@
 import React, { useState, useEffect } from 'react'
-import { Layout,Button, Input,
-Breadcrumb, Icon, Typography,Spin,
-Row, Col,Card } from 'antd';
+import {
+  Layout, Button, Input,
+  Breadcrumb, Icon, Typography, Spin,
+  Row, Col, Card
+} from 'antd';
 
 
 
 import ReactSVG from 'react-svg';
 import NotFound from '../../Dashboard/NotFound';
+import { QRCode } from 'react-qrcode-logo';
+
 
 import Loading from '.././Loading';
 import Divider from '.././Divider';
 
-import CardProduct from './CardProduct';
-import {AxiosApiGet} from '../../../helpers/AxiosApi';
+import ProductCard from './ProductCard';
+import { AxiosApiGet } from '../../../helpers/AxiosApi';
 
 import ModalAddProduct from './ModalAddProduct';
 import { withTranslation } from 'react-i18next';
+
+import {Barcode} from 'react-barcode'
 
 const { Title } = Typography;
 const { Content } = Layout;
 
 
-const Inventory = ({ t, i18n } ) => {
+const Inventory = ({ t, i18n }) => {
 
   //Variables
   //var array = [ "hola", "adios"]
-  const[ productsList, setProductsList ] = useState( [] );
-  const[ loading , setLoading] = useState(true);
+  const [productsList, setProductsList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  async function GetApi()  {
-    AxiosApiGet('api/product').then ( response => {
+  async function GetApi() {
+    AxiosApiGet('api/product').then(response => {
       if (response.status === 200) {
-        setProductsList (response.data);
+        setProductsList(response.data);
         console.log(response);
         setLoading(false);
       } else {
@@ -45,9 +51,7 @@ const Inventory = ({ t, i18n } ) => {
 
     GetApi();
 
-  }, [] );
-
-
+  }, []);
 
   return (
 
@@ -62,21 +66,21 @@ const Inventory = ({ t, i18n } ) => {
           <Card bordered={false} id="card-content">
 
             <Col>
-            <Breadcrumb style={{marginBottom: '20px'}}>
-              <Breadcrumb.Item href="">
-                <Icon type="home" />
-              </Breadcrumb.Item>
-              <Breadcrumb.Item href="">
-                <Icon type="user" />
-                <span>Productos</span>
-              </Breadcrumb.Item>
-              <Breadcrumb.Item>Inventario</Breadcrumb.Item>
-            </Breadcrumb>
+              <Breadcrumb style={{ marginBottom: '20px' }}>
+                <Breadcrumb.Item href="">
+                  <Icon type="home" />
+                </Breadcrumb.Item>
+                <Breadcrumb.Item href="">
+                  <Icon type="user" />
+                  <span>Productos</span>
+                </Breadcrumb.Item>
+                <Breadcrumb.Item>Inventario</Breadcrumb.Item>
+              </Breadcrumb>
             </Col>
 
             {/* Main Content*/}
             <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-              <Input size={"large"} allowClear  placeholder="Realizar una búsqueda" />
+              <Input size={"large"} allowClear placeholder="Realizar una búsqueda" />
             </Col>
 
             <Col xs={24} sm={24} md={12} lg={12} xl={12}>
@@ -88,55 +92,57 @@ const Inventory = ({ t, i18n } ) => {
 
             </Col>
 
-            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+          <Col xs={24} sm={24} md={24} lg={24} xl={24}>
             <Divider> </Divider>
-              <div >
-                {loading ?
-                  <Loading> </Loading>
-                  :
+            <div >
+              {loading ?
+                <Loading> </Loading>
+                :
 
-                  <div>
-                    { (productsList.length > 0) ?
-                      <div>
-
-
-                          {productsList.map(product =>
-                            <Col style={{paddingLeft : '15px' , paddingRight : '15px'}} xs={24} sm={24} md={16} lg={8} xl={8} >
-                              <CardProduct Product={product} ></CardProduct>
-                            </Col>
-                          )}
-
-                      </div>
+                <div>
+                  {(productsList.length > 0) ?
+                    <div>
 
 
-                      :
-                      <NotFound> </NotFound>
-                    }
-                  </div>
-                }
+                      {productsList.map(product =>
+                        <Col style={{ paddingLeft: '15px', paddingRight: '15px' }} xs={24} sm={24} md={16} lg={8} xl={8} >
+                          <ProductCard Product={product} ></ProductCard>
 
-              </div>
-            </Col>
+                        </Col>
+                      )}
+
+                    </div>
+
+
+                    :
+                    <NotFound> </NotFound>
+                  }
+                </div>
+              }
+
+            </div>
+          </Col>
 
           </Card>
         </div>
       </Col>
 
-      {/*Extra Content */}
-      <Content id="maincontent"
-        style={{
-          padding: 24,
-          minHeight: 400
-        }}
-      >
+      {/*Extra Content */ }
+  <Content id="maincontent"
+    style={{
+      padding: 24,
+      minHeight: 400
+    }}
+  >
 
 
-      </Content>
+
+  </Content>
 
 
-    </Row>
+    </Row >
   )
 }
 
-export default withTranslation() ( Inventory ) ;
+export default withTranslation()(Inventory);
 

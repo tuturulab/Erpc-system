@@ -11,11 +11,12 @@ import NotFound from '../../Dashboard/NotFound';
 import Loading from '.././Loading';
 import Divider from '.././Divider';
 
-import CardProduct from './CardProduct';
+import CardProduct from './ProductCard';
 import {AxiosApiGet} from '../../../helpers/AxiosApi';
 
 import ModalAddSales from './ModalAddSales';
 import { withTranslation } from 'react-i18next';
+import ModalAddClient from './AddClient';
 
 const { Title } = Typography;
 const { Content } = Layout;
@@ -29,14 +30,19 @@ const columns = [
     render: text => <a>{text}</a>,
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
+    title: 'Email',
+    dataIndex: 'email',
+    key: 'email',
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
+    title: 'Identificación',
+    dataIndex: 'document',
+    key: 'document',
+  },
+  {
+    title: 'Teléfono',
+    dataIndex: 'cellphone',
+    key: 'cellphone',
   }
 ];
 
@@ -50,7 +56,8 @@ const Clients = ({ t, i18n } ) => {
 
 
   async function GetApi()  {
-    AxiosApiGet('api/clients').then ( response => {
+    AxiosApiGet('api/customer')
+    .then ( response => {
       if (response.status === 200) {
         setClientsList (response.data);
         console.log(response);
@@ -74,7 +81,7 @@ const Clients = ({ t, i18n } ) => {
     <Row>
       <Col xs={24} sm={24} md={24} lg={24} xl={24}>
         <div id="overlay-nav" >
-          <Title id="maintitle">   {t('products.sales.title')} </Title>
+          <Title id="maintitle"> Clientes </Title>
 
         </div>
 
@@ -88,9 +95,9 @@ const Clients = ({ t, i18n } ) => {
               </Breadcrumb.Item>
               <Breadcrumb.Item href="">
                 <Icon type="user" />
-                <span>Productos</span>
+                <span>RRHH</span>
               </Breadcrumb.Item>
-              <Breadcrumb.Item>Ventas</Breadcrumb.Item>
+              <Breadcrumb.Item>Clientes</Breadcrumb.Item>
             </Breadcrumb>
             </Col>
 
@@ -102,7 +109,7 @@ const Clients = ({ t, i18n } ) => {
             <Col xs={24} sm={24} md={12} lg={12} xl={12}>
               <div className="section-btn" >
 
-                <ModalAddSales text="Agregar una venta"> </ModalAddSales>
+                <ModalAddClient complete={GetApi} text="Agregar un cliente"> </ModalAddClient>
               </div>
 
 
@@ -118,7 +125,7 @@ const Clients = ({ t, i18n } ) => {
                   <div>
                     { (clientsList.length > 0) ?
                       <div>
-                        <Table columns={columns} dataSource={clientsList} />
+                        <Table bordered columns={columns} dataSource={clientsList} />
                       </div>
 
 
