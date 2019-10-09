@@ -28,10 +28,10 @@ const ModalAddClient = ( {text, complete } ) => {
     setLoading(true);
 
     var values = {
-        "name" : nameField,
-        "email" : emailfield,
-        "document" : documentField,
-        "cellphone" : cellphoneField
+      "name" : nameField,
+      "email" : emailfield,
+      "document" : documentField,
+      "cellphone" : cellphoneField
     }
 
     AxiosApiPost('api/customer', values )
