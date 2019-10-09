@@ -45,7 +45,7 @@ const ProductCard = ({ Product }) => {
           <div className="contents">
             <p> {Product.description} </p>
             <QRCode logoWidth	= "80" logoImage={require('../../../assets/logo512.png')}  value={"http://localhost:5001/marketplace/" + Product.productId} />
-            <Barcode value="http://github.com/kciter" />
+            <Barcode width="6" value={Product.productId} />
           </div>
           
         </div>

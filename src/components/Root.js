@@ -18,6 +18,7 @@ import { I18nextProvider } from 'react-i18next';
 //Languages list
 import EnglishLan from './i18n/translations/en/english.json';
 import SpanishLan from './i18n/translations/es/spanish.json';
+import Marketplace from './Marketplace/Marketplace';
 
 const Home = React.lazy(() => import("./Home"));
 const Main = React.lazy(() => import("./Dashboard/Main"));
@@ -123,6 +124,7 @@ const Root = ({ store }) => (
               )
           )}/>
 
+          <Route path="/marketplace" component={WaitingComponent(Marketplace) } />
 
           <Route component={NotFoundPage} />
         </Switch>

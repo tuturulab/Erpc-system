@@ -112,6 +112,8 @@ class Main extends React.Component {
               <Route exact path={"/admin/empleados"} component={Employees} />
 
 
+
+
               <Route exact path={"/admin/calendario"} component={Calendar} />
 
               <Route exact path={"/admin/scrum"} component={ScrumManager} />
