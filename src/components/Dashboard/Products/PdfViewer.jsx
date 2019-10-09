@@ -33,7 +33,7 @@ export default function PdfViewer(t, i18n) {
 
   useEffect(() => {
     //fetch here
-    Axios.get('https://localhost:44396/api/purchase/getPdf64Test')
+    Axios.get('http://localhost:5001/api/purchase/getPdf64Test')
       .then(response => {
         if(response.status === 200){
           setPdf(response.data.pdf64);

@@ -28,10 +28,10 @@ const ModalAddClient = ( {text, complete } ) => {
     setLoading(true);
 
     var values = {
-        "name" : nameField,
-        "email" : emailfield,
-        "document" : documentField,
-        "cellphone" : cellphoneField
+      "name" : nameField,
+      "email" : emailfield,
+      "document" : documentField,
+      "cellphone" : cellphoneField
     }
 
     AxiosApiPost('api/customer', values )
@@ -71,7 +71,7 @@ const ModalAddClient = ( {text, complete } ) => {
 
       <Modal
         visible={visible}
-        title="Agregar un Producto"
+        title="Agregar un Cliente"
         onOk={handleOk}
         onCancel={handleCancel}
         width={"90%"}
