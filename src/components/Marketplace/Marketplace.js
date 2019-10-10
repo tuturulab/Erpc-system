@@ -37,7 +37,7 @@ class Marketplace extends Component {
   // Fetch Initial Set of Products from external API
   getProducts() {
     let url =
-      "http://localhost:5001/api/product/ecommerce";
+      "https://wonderful-swanson-9eeb3c.netlify.com/api/product/ecommerce";
     axios.get(url).then(response => {
 
       console.log( response.data );

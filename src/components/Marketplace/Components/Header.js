@@ -115,7 +115,7 @@ class Header extends Component {
           <div className="brand">
             <img
               className="logo"
-              src="isolayed.svg"
+              src="isolated.png"
               alt="Tuturu Market Place"
             />
           </div>

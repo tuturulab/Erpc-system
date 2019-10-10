@@ -121,7 +121,7 @@ class Login extends React.Component {
 
             <div className="form__field">
               <Button loading={this.state.loadingBtn} onClick={this.onSubmit} size={"large"} style={{width: '100%', position: 'relative', zIndex : '999'}} type="primary" >
-                Loading
+                Iniciar Sesión
               </Button>
 
             </div>

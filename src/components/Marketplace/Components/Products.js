@@ -26,7 +26,7 @@ class Products extends Component {
             key={product.id}
             price={product.price}
             name={product.name}
-            image={"http://localhost:5001/images/"+ product.picture }
+            image={"https://wonderful-swanson-9eeb3c.netlify.com/images/"+ product.picture }
             id={product.id}
             addToCart={this.props.addToCart}
             productQuantity={this.props.productQuantity}
