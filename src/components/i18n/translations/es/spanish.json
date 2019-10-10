@@ -28,7 +28,7 @@
       "title" : "Contratación"
     },
     "qual" : {
-      "title" : "Calification"
+      "title" : "Calificación"
     },
     "vacation" : {
       "title" :  "Vacaciones"
@@ -44,7 +44,7 @@
       "title" : "Scrum Manager"
     },
     "obj" : {
-      "title" : "Objectivos"
+      "title" : "Objetivos"
     },
     "fin" : {
       "title" : "Financieros"

@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Ubuntu-L
+font link: https://fonts.google.com/specimen/Ubuntu
+font author: Dalton Maag
+font author site: http://www.daltonmaag.com/
+Slogan Font: Fanwood Text.otf
+
+icon designer: Ashia Sabbath
+icon designer link: /acsabbath
+        
+{"bg":"#0D9E86","icon":"#FBE1D5","font":"#FFFFFF","slogan":"#ffffff"}
+      

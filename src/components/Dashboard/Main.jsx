@@ -26,6 +26,8 @@ import ScrumManager from './Admin/ScrumManager';
 import Stats from './Stats/Stats';
 import Sales from './Products/Sales';
 import Clients from './Products/Clients';
+import Dviewer from './rrhh/DocumentViewer/Dviewer';
+import Perfomance from './rrhh/Perfomance';
 const { SubMenu } = Menu;
 const { Title } = Typography;
 const { Header, Content, Sider } = Layout;
@@ -111,11 +113,13 @@ class Main extends React.Component {
               <Route exact path={"/admin/empleados"} component={Employees} />
 
 
-
+              <Route exact path={"/admin/stats"} component={Stats} />
 
               <Route exact path={"/admin/calendario"} component={Calendar} />
 
               <Route exact path={"/admin/scrum"} component={ScrumManager} />
+              <Route exact path={"/admin/calificacion"} component={Perfomance} />
+              <Route exact path={"/admin/documentEditor"} component={Dviewer} />
 
             </Switch>
             {/*EndRoutes*/}

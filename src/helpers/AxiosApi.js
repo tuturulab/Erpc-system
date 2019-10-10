@@ -3,9 +3,13 @@
 */
 import Axios, { create } from 'axios';
 
+const baseurl = process.env.NODE_ENV === 'production' ? "https://erpc-system-backend20191006012202.azurewebsites.net"
+  : "http://localhost:5001";
+
+console.log(process.env.NODE_ENV);
 
 var AxiosApi = create({
-  baseURL: 'http://localhost:5001'
+  baseURL: baseurl
 });
 
 var token = localStorage.getItem('jwt');
