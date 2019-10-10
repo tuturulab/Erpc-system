@@ -83,7 +83,7 @@ const ModalAddEmployee = ( {text, complete} ) => {
           onOk={handleOk}
           onCancel={handleCancel}
           width={"90%"}
-          style={{maxWidth : '700px'}}
+          style={{maxWidth : '800px'}}
           footer={[
             <Button key="back" onClick={handleCancel}>
               Cerrar

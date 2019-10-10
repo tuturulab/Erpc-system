@@ -17,11 +17,11 @@ var TitleBar = /** @class */ (function () {
             var openText;
             var documentTileText;
             if (!_this.isRtl) {
-                downloadText = 'Download';
-                downloadToolTip = 'Download this document.';
-                printText = 'Print';
-                printToolTip = 'Print this document (Ctrl+P).';
-                openText = 'Open';
+                downloadText = 'Descargar';
+                downloadToolTip = 'Descargar este documento';
+                printText = 'Imprimir';
+                printToolTip = 'Imprimir este documento (Ctrl+P).';
+                openText = 'Abrir';
                 documentTileText = 'Document Name. Click or tap to rename this document.';
             }
             else {

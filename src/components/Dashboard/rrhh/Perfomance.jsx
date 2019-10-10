@@ -3,6 +3,7 @@ import { Layout,Button, Input,
 Breadcrumb, Icon, Typography,Spin,
 Row, Col,Card } from 'antd';
 
+import { Link } from 'react-router-dom';
 
 import ReactSVG from 'react-svg';
 import NotFound from '../../Dashboard/NotFound';
@@ -10,50 +11,45 @@ import NotFound from '../../Dashboard/NotFound';
 import Loading from '.././Loading';
 import Divider from '.././Divider';
 
-import {AxiosApiGet} from '../../../helpers/AxiosApi';
-
 import { withTranslation } from 'react-i18next';
-import Chart from "react-apexcharts";
+import ModalAddEmployee from './AddEmployee';
+
+import './Styles/CardEmployees.less';
 
 const { Title } = Typography;
 const { Content } = Layout;
 
+const DocumentCard = () => {
+  return(
+    <Card id="card-employe" >
+      <div id="profile-info">
+        <img id="profile-image" src={"https://cdn2.iconfinder.com/data/icons/flat-file-types-1-1/300/icon_file-DOC_plano-512.png"} ></img>
+      </div>
 
-const state = {
-  options: {
-    chart: {
-      id: "basic-bar"
-    },
-    xaxis: {
-      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
-    }
-  },
-  series: [
-    {
-      name: "series-1",
-      data: [30, 40, 45, 50, 49, 60, 70, 91]
-    }
-  ]
-};
+      <p id="name-card-employee"> Plantilla de evaluacion </p>
+      <p id="rol-card-employee"> <Icon type="phone" /> Modelo 1</p>
 
-const Stats = ({ t, i18n } ) => {
+      <p id="description-card-employee"> Siguiendo metodologia europea </p>
+      <Button><Link to="/admin/documentEditor">Ver</Link></Button>
+    </Card>
+  );
+}
 
-  //Variables
-  //var array = [ "hola", "adios"]
-  //const[ productsList, setProductsList ] = useState( [] );
-  //const[ loading , setLoading] = useState(true);
 
+const Perfomance = ({ t, i18n } ) => {
 
   return (
 
     <Row>
       <Col xs={24} sm={24} md={24} lg={24} xl={24}>
         <div id="overlay-nav" >
-          <Title id="maintitle">  Estadísticas </Title>
+          <Title id="maintitle">Rendimiento de empleados</Title>
 
         </div>
 
         <div className="wrapper">
+          <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+
           <Card bordered={false} id="card-content">
 
             <Col>
@@ -63,9 +59,9 @@ const Stats = ({ t, i18n } ) => {
               </Breadcrumb.Item>
               <Breadcrumb.Item href="">
                 <Icon type="user" />
-                <span>Inicio</span>
+                <span> Utils </span>
               </Breadcrumb.Item>
-              <Breadcrumb.Item>Estadísticas</Breadcrumb.Item>
+              <Breadcrumb.Item>Editor de Documentos</Breadcrumb.Item>
             </Breadcrumb>
             </Col>
 
@@ -77,24 +73,27 @@ const Stats = ({ t, i18n } ) => {
             <Col xs={24} sm={24} md={12} lg={12} xl={12}>
               <div className="section-btn" >
 
+                <p>New</p>
               </div>
 
 
             </Col>
 
-            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-            <Divider> </Divider>
-              <div >
-                <Chart
-                options={state.options}
-                series={state.series}
-                type="bar"
-                width="500"
-                />
-              </div>
+            <Col xs={24} sm={24} md={24} lg={242} xl={24}>
+
+
             </Col>
 
           </Card>
+          </Col>
+
+          <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+            <div >
+              <Col style={{textAlign: 'center', paddingLeft: '10px', paddingRight: '10px' }} xs={24} sm={24} md={8} lg={8} xl={8}>
+                <DocumentCard />
+              </Col>
+            </div>
+          </Col>
         </div>
       </Col>
 
@@ -106,7 +105,6 @@ const Stats = ({ t, i18n } ) => {
         }}
       >
 
-
       </Content>
 
 
@@ -114,5 +112,4 @@ const Stats = ({ t, i18n } ) => {
   )
 }
 
-export default withTranslation() ( Stats ) ;
-
+export default withTranslation() ( Perfomance ) ;
