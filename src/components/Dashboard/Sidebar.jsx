@@ -47,9 +47,7 @@ class Sidebar extends React.Component {
             {/*<Menu.Item key="3"> {t('products.imports.title')} </Menu.Item>*/}
             {/*<Menu.Item key="4"> {t('products.orders.title')} </Menu.Item>*/}
             <Menu.Item key="2"> {t('products.clients.title')} <Link to="/admin/clientes"> </Link> </Menu.Item>
-            <Menu.Item key="3"> {t('products.orders.title')} </Menu.Item>
             <Menu.Item key="4"> {t('products.sales.title')} <Link to="/admin/ventas"> </Link> </Menu.Item>
-            <Menu.Item key="5">Pdfviewer<Link to="/admin/pdfviewer"> </Link> </Menu.Item>
           </SubMenu>
           <SubMenu
             key="sub2"
@@ -61,9 +59,9 @@ class Sidebar extends React.Component {
             }
           >
             <Menu.Item key="6"> {t('rrhh.employees.title')} <Link to="/admin/empleados">  </Link> </Menu.Item>
-            <Menu.Item key="7"> {t('rrhh.contract.title')}  <Link to="/admin/contratacion"> </Link>  </Menu.Item>
+           
             <Menu.Item key="8"> {t('rrhh.qual.title')} <Link to="/admin/calificacion">  </Link> </Menu.Item>
-            <Menu.Item key="9"> {t('rrhh.vacation.title')} <Link to="/admin/vacaciones">  </Link> </Menu.Item>
+           
           </SubMenu>
           <SubMenu
             key="sub3"
@@ -76,8 +74,6 @@ class Sidebar extends React.Component {
           >
             <Menu.Item key="10"> {t('admin.calendar.title')} <Link to="/admin/calendario">  </Link> </Menu.Item>
             <Menu.Item key="11"> {t('admin.scrum.title')} <Link to="/admin/scrum">  </Link> </Menu.Item>
-            <Menu.Item key="12"> {t('admin.obj.title')} <Link to="/admin/objetivos">  </Link> </Menu.Item>
-            <Menu.Item key="13"> {t('admin.fin.title')} <Link to="/admin/financiero">  </Link> </Menu.Item>
 
 
           </SubMenu>

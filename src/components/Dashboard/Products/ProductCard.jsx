@@ -17,7 +17,7 @@ const ProductCard = ({ Product }) => {
     <div>
       <div className="wrapper-card-product">
         <div className="container">
-          <div style={{ backgroundImage: "url(https://wonderful-swanson-9eeb3c.netlify.com/images/" + Product.picture + ")" }} className="top"></div>
+          <div style={{ backgroundImage: "url(https://erpc-system-backend20191006012202.azurewebsites.net/images/" + Product.picture + ")" }} className="top"></div>
           <div className="bottom">
             <div className="left">
               <div className="details">

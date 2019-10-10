@@ -9,7 +9,7 @@ const employeesCard = ( {employee} ) => {
     <div>
       <Card id="card-employe" >
         <div id="profile-info">
-          <img id="profile-image" src={"https://wonderful-swanson-9eeb3c.netlify.com/images/" + employee.picture}></img>
+          <img id="profile-image" src={"https://erpc-system-backend20191006012202.azurewebsites.net/images/" + employee.picture}></img>
         </div>
 
         <p id="name-card-employee"> {employee.name} </p>

@@ -42,7 +42,7 @@ const columns = [
     key: 'action',
     render: (text, record) => (
       <span>
-        <a target="_blank" href={"http://localhost:5001/api/receipt/"+record.saleId } > Factura </a>
+        <a target="_blank" href={"https://erpc-system-backend20191006012202.azurewebsites.net/api/receipt/"+record.saleId } > Factura </a>
       </span>
     ),
   }

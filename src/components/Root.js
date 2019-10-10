@@ -114,13 +114,13 @@ const Root = ({ store }) => (
         <Switch>
           {/*<Route exact path="/" component={WaitingComponent(Home)}  />*/}
 
-          <Route exact path="/login" component={WaitingComponent(Login) } />
+          <Route exact path="/" component={WaitingComponent(Login) } />
 
           <Route path="/admin" render={() => (
             isUserLoggedIn() ? (
               <HomeComponent></HomeComponent>
               ) : (
-              <Redirect to="/login"/>
+              <Redirect to="/"/>
               )
           )}/>
 

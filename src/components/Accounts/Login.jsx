@@ -95,6 +95,10 @@ class Login extends React.Component {
 
   }
 
+  handleMarket = () => {
+    this.props.history.push('/marketplace');
+  }
+
   render() {
     return(
       <div id="bodylogin" className="align">
@@ -124,7 +128,13 @@ class Login extends React.Component {
                 Login
               </Button>
 
+              <Button onClick={this.handleMarket } size={"large"} style={{width: '100%', position: 'relative', zIndex : '999', background: 'green' }} type="primary" >
+                MarketPlace
+              </Button>
+
+
             </div>
+
 
 
           </form>
