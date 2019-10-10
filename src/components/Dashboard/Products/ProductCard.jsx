@@ -17,7 +17,7 @@ const ProductCard = ({ Product }) => {
     <div>
       <div className="wrapper-card-product">
         <div className="container">
-          <div style={{ backgroundImage: "url(http://localhost:5001/images/" + Product.picture + ")" }} className="top"></div>
+          <div style={{ backgroundImage: "url(https://wonderful-swanson-9eeb3c.netlify.com/images/" + Product.picture + ")" }} className="top"></div>
           <div className="bottom">
             <div className="left">
               <div className="details">
@@ -44,8 +44,7 @@ const ProductCard = ({ Product }) => {
           <div className="icon"><Icon type="info" style={{ fontSize: '25px', color: '#fff' }} /></div>
           <div className="contents">
             <p> {Product.description} </p>
-            <QRCode logoWidth	= "80" logoImage={require('../../../assets/logo512.png')}  value={"http://localhost:5001/marketplace/" + Product.productId} />
-            <Barcode width="6" value={Product.productId} />
+            <QRCode id={Product.productId} logoWidth	= "75" size = "225" logoImage={require('../../../assets/logo512.png')}  value={"https://wonderful-swanson-9eeb3c.netlify.com/marketplace/" + Product.productId} />
           </div>
           
         </div>
