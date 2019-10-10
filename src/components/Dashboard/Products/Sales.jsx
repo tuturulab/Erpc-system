@@ -22,20 +22,29 @@ const { Content } = Layout;
 
 const columns = [
   {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
+    title: 'Id',
+    dataIndex: 'saleId',
+    key: 'saleId',
     render: text => <a>{text}</a>,
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
+    title: 'Cliente',
+    dataIndex: 'name',
+    key: 'name',
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
+    title: 'Fecha',
+    dataIndex: 'date',
+    key: 'date',
+  },
+  {
+    title: 'Action',
+    key: 'action',
+    render: (text, record) => (
+      <span>
+        <a target="_blank" href={"http://localhost:5001/api/receipt/"+record.saleId } > Factura </a>
+      </span>
+    ),
   }
 ];
 
@@ -48,19 +57,23 @@ const Sales = ({ t, i18n } ) => {
   const[ loading , setLoading] = useState(true);
 
 
-  useEffect(() => {
+  async function GetApi()  {
+    AxiosApiGet('api/sales')
+    .then ( response => {
+      if (response.status === 200) {
+        setSalesList (response.data);
+        console.log(response);
+        setLoading(false);
+      } else {
+        setLoading(false);
+      }
+    }).catch(e => {
+      console.log(e);
+    });
+  }
 
-    async function GetApi()  {
-      AxiosApiGet('api/sales').then ( response => {
-        if (response.status === 200) {
-          setSalesList (response.data);
-          console.log(response);
-          setLoading(false);
-        } else {
-          setLoading(false);
-        }
-      })
-    }
+
+  useEffect(() => {
 
     GetApi();
 
@@ -100,7 +113,7 @@ const Sales = ({ t, i18n } ) => {
             <Col xs={24} sm={24} md={12} lg={12} xl={12}>
               <div className="section-btn" >
 
-                <ModalAddSales text="Agregar una venta"> </ModalAddSales>
+                <ModalAddSales complete={GetApi } text="Agregar una venta"> </ModalAddSales>
               </div>
 
 
