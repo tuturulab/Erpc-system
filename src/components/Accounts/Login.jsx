@@ -53,7 +53,7 @@ class Login extends React.Component {
       }
     }
 
-    axios.post("http://localhost:5001/api/users/authenticate", params , settings)
+    axios.post("https://erpc-system-backend20191006012202.azurewebsites.net/api/users/authenticate", params , settings)
     .then ( response => {
       if (response.status === 200) {
 
@@ -133,7 +133,7 @@ class Login extends React.Component {
 
         </div>
 
-        
+
       </div>
     )
   }
